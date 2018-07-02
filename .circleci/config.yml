@@ -111,9 +111,9 @@ workflows:
           filters:
             branches:
               only: /feature\/.+-alpha.+/
-      - deploy:
-          requires:
-            - test
-          filters:
-            branches:
-              only: master
+      # - deploy:
+      #     requires:
+      #       - test
+      #     filters:
+      #       branches:
+      #         only: master
