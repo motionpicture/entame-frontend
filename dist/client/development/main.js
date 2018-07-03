@@ -314,15 +314,30 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_index_index_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/index/index.component */ "./src/app/components/index/index.component.ts");
-/* harmony import */ var _routes_auth_route__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes/auth.route */ "./src/app/routes/auth.route.ts");
+/* harmony import */ var _components_base_base_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/base/base.component */ "./src/app/components/base/base.component.ts");
+/* harmony import */ var _components_index_index_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/index/index.component */ "./src/app/components/index/index.component.ts");
+/* harmony import */ var _routes_auth_route__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./routes/auth.route */ "./src/app/routes/auth.route.ts");
+/* harmony import */ var _routes_coin_route__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes/coin.route */ "./src/app/routes/coin.route.ts");
+/* harmony import */ var _routes_point_card_route__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./routes/point-card.route */ "./src/app/routes/point-card.route.ts");
+
+
+
 
 
 
 var appRoutes = [
     { path: '', redirectTo: '/', pathMatch: 'full' },
-    { path: '', component: _components_index_index_component__WEBPACK_IMPORTED_MODULE_1__["IndexComponent"] },
-    _routes_auth_route__WEBPACK_IMPORTED_MODULE_2__["route"]
+    {
+        path: '',
+        component: _components_base_base_component__WEBPACK_IMPORTED_MODULE_1__["BaseComponent"],
+        canActivate: [],
+        children: [
+            { path: '', component: _components_index_index_component__WEBPACK_IMPORTED_MODULE_2__["IndexComponent"] },
+            _routes_point_card_route__WEBPACK_IMPORTED_MODULE_5__["route"],
+            _routes_coin_route__WEBPACK_IMPORTED_MODULE_4__["route"]
+        ]
+    },
+    _routes_auth_route__WEBPACK_IMPORTED_MODULE_3__["route"]
 ];
 // tslint:disable-next-line:no-stateless-class
 var AppRoutingModule = /** @class */ (function () {
@@ -349,24 +364,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.module */ "./src/app/app.module.ts");
 /* harmony import */ var _components_app_app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/app/app.component */ "./src/app/components/app/app.component.ts");
 /* harmony import */ var _node_modules_angular_router_router_ngfactory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/@angular/router/router.ngfactory */ "../../node_modules/@angular/router/router.ngfactory.js");
-/* harmony import */ var _components_index_index_component_ngfactory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/index/index.component.ngfactory */ "./src/app/components/index/index.component.ngfactory.js");
-/* harmony import */ var _components_auth_auth_signin_auth_signin_component_ngfactory__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/auth/auth-signin/auth-signin.component.ngfactory */ "./src/app/components/auth/auth-signin/auth-signin.component.ngfactory.js");
-/* harmony import */ var _components_auth_auth_signout_auth_signout_component_ngfactory__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/auth/auth-signout/auth-signout.component.ngfactory */ "./src/app/components/auth/auth-signout/auth-signout.component.ngfactory.js");
-/* harmony import */ var _components_app_app_component_ngfactory__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/app/app.component.ngfactory */ "./src/app/components/app/app.component.ngfactory.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ "../../node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "../../node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "../../node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./services/sasaki/sasaki.service */ "./src/app/services/sasaki/sasaki.service.ts");
-/* harmony import */ var _services_auth_guard_auth_guard_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/auth-guard/auth-guard.service */ "./src/app/services/auth-guard/auth-guard.service.ts");
-/* harmony import */ var _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/storage/storage.service */ "./src/app/services/storage/storage.service.ts");
-/* harmony import */ var _services_user_user_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/user/user.service */ "./src/app/services/user/user.service.ts");
-/* harmony import */ var _services_util_util_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/util/util.service */ "./src/app/services/util/util.service.ts");
-/* harmony import */ var _components_index_index_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/index/index.component */ "./src/app/components/index/index.component.ts");
-/* harmony import */ var _components_auth_auth_signin_auth_signin_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/auth/auth-signin/auth-signin.component */ "./src/app/components/auth/auth-signin/auth-signin.component.ts");
-/* harmony import */ var _components_auth_auth_signout_auth_signout_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/auth/auth-signout/auth-signout.component */ "./src/app/components/auth/auth-signout/auth-signout.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _components_base_base_component_ngfactory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/base/base.component.ngfactory */ "./src/app/components/base/base.component.ngfactory.js");
+/* harmony import */ var _components_index_index_component_ngfactory__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/index/index.component.ngfactory */ "./src/app/components/index/index.component.ngfactory.js");
+/* harmony import */ var _components_point_card_point_card_index_point_card_index_component_ngfactory__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/point-card/point-card-index/point-card-index.component.ngfactory */ "./src/app/components/point-card/point-card-index/point-card-index.component.ngfactory.js");
+/* harmony import */ var _components_point_card_point_card_transfer_complete_point_card_transfer_complete_component_ngfactory__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.ngfactory */ "./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.ngfactory.js");
+/* harmony import */ var _components_point_card_point_card_transfer_input_point_card_transfer_input_component_ngfactory__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/point-card/point-card-transfer-input/point-card-transfer-input.component.ngfactory */ "./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.ngfactory.js");
+/* harmony import */ var _components_coin_coin_index_coin_index_component_ngfactory__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/coin/coin-index/coin-index.component.ngfactory */ "./src/app/components/coin/coin-index/coin-index.component.ngfactory.js");
+/* harmony import */ var _components_coin_coin_payment_complete_coin_payment_complete_component_ngfactory__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/coin/coin-payment-complete/coin-payment-complete.component.ngfactory */ "./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.ngfactory.js");
+/* harmony import */ var _components_coin_coin_payment_input_coin_payment_input_component_ngfactory__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/coin/coin-payment-input/coin-payment-input.component.ngfactory */ "./src/app/components/coin/coin-payment-input/coin-payment-input.component.ngfactory.js");
+/* harmony import */ var _components_coin_coin_payment_select_coin_payment_select_component_ngfactory__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/coin/coin-payment-select/coin-payment-select.component.ngfactory */ "./src/app/components/coin/coin-payment-select/coin-payment-select.component.ngfactory.js");
+/* harmony import */ var _components_auth_auth_signin_auth_signin_component_ngfactory__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/auth/auth-signin/auth-signin.component.ngfactory */ "./src/app/components/auth/auth-signin/auth-signin.component.ngfactory.js");
+/* harmony import */ var _components_auth_auth_signout_auth_signout_component_ngfactory__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/auth/auth-signout/auth-signout.component.ngfactory */ "./src/app/components/auth/auth-signout/auth-signout.component.ngfactory.js");
+/* harmony import */ var _components_app_app_component_ngfactory__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/app/app.component.ngfactory */ "./src/app/components/app/app.component.ngfactory.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/platform-browser */ "../../node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ "../../node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ "../../node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./services/sasaki/sasaki.service */ "./src/app/services/sasaki/sasaki.service.ts");
+/* harmony import */ var _services_auth_guard_auth_guard_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./services/auth-guard/auth-guard.service */ "./src/app/services/auth-guard/auth-guard.service.ts");
+/* harmony import */ var _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./services/storage/storage.service */ "./src/app/services/storage/storage.service.ts");
+/* harmony import */ var _services_user_user_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./services/user/user.service */ "./src/app/services/user/user.service.ts");
+/* harmony import */ var _services_util_util_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./services/util/util.service */ "./src/app/services/util/util.service.ts");
+/* harmony import */ var _components_base_base_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/base/base.component */ "./src/app/components/base/base.component.ts");
+/* harmony import */ var _components_index_index_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/index/index.component */ "./src/app/components/index/index.component.ts");
+/* harmony import */ var _components_point_card_point_card_index_point_card_index_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/point-card/point-card-index/point-card-index.component */ "./src/app/components/point-card/point-card-index/point-card-index.component.ts");
+/* harmony import */ var _components_point_card_point_card_transfer_complete_point_card_transfer_complete_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/point-card/point-card-transfer-complete/point-card-transfer-complete.component */ "./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.ts");
+/* harmony import */ var _components_point_card_point_card_transfer_input_point_card_transfer_input_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/point-card/point-card-transfer-input/point-card-transfer-input.component */ "./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.ts");
+/* harmony import */ var _components_coin_coin_index_coin_index_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/coin/coin-index/coin-index.component */ "./src/app/components/coin/coin-index/coin-index.component.ts");
+/* harmony import */ var _components_coin_coin_payment_complete_coin_payment_complete_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/coin/coin-payment-complete/coin-payment-complete.component */ "./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.ts");
+/* harmony import */ var _components_coin_coin_payment_input_coin_payment_input_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/coin/coin-payment-input/coin-payment-input.component */ "./src/app/components/coin/coin-payment-input/coin-payment-input.component.ts");
+/* harmony import */ var _components_coin_coin_payment_select_coin_payment_select_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/coin/coin-payment-select/coin-payment-select.component */ "./src/app/components/coin/coin-payment-select/coin-payment-select.component.ts");
+/* harmony import */ var _components_auth_auth_signin_auth_signin_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/auth/auth-signin/auth-signin.component */ "./src/app/components/auth/auth-signin/auth-signin.component.ts");
+/* harmony import */ var _components_auth_auth_signout_auth_signout_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/auth/auth-signout/auth-signout.component */ "./src/app/components/auth/auth-signout/auth-signout.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /**
  * @fileoverview This file was generated by the Angular template compiler. Do not edit.
  *
@@ -397,7 +428,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var AppModuleNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵcmf"](_app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], [_components_app_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]], function (_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmod"]([_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵCodegenComponentFactoryResolver"], [[8, [_node_modules_angular_router_router_ngfactory__WEBPACK_IMPORTED_MODULE_3__["ɵEmptyOutletComponentNgFactory"], _components_index_index_component_ngfactory__WEBPACK_IMPORTED_MODULE_4__["IndexComponentNgFactory"], _components_auth_auth_signin_auth_signin_component_ngfactory__WEBPACK_IMPORTED_MODULE_5__["AuthSigninComponentNgFactory"], _components_auth_auth_signout_auth_signout_component_ngfactory__WEBPACK_IMPORTED_MODULE_6__["AuthSignoutComponentNgFactory"], _components_app_app_component_ngfactory__WEBPACK_IMPORTED_MODULE_7__["AppComponentNgFactory"]]], [3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"]], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleRef"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["LOCALE_ID"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_core_core_l"], [[3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["LOCALE_ID"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgLocalization"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgLocaleLocalization"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["LOCALE_ID"], [2, _angular_common__WEBPACK_IMPORTED_MODULE_8__["ɵangular_packages_common_common_a"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_ID"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_core_core_f"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["IterableDiffers"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_core_core_j"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["KeyValueDiffers"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_core_core_k"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["DomSanitizer"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_platform_browser_platform_browser_e"], [_angular_common__WEBPACK_IMPORTED_MODULE_8__["DOCUMENT"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_core__WEBPACK_IMPORTED_MODULE_0__["Sanitizer"], null, [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["DomSanitizer"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["HAMMER_GESTURE_CONFIG"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["HammerGestureConfig"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["EVENT_MANAGER_PLUGINS"], function (p0_0, p0_1, p0_2, p1_0, p2_0, p2_1, p2_2) { return [new _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵDomEventsPlugin"](p0_0, p0_1, p0_2), new _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵKeyEventsPlugin"](p1_0), new _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵHammerGesturesPlugin"](p2_0, p2_1, p2_2)]; }, [_angular_common__WEBPACK_IMPORTED_MODULE_8__["DOCUMENT"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], [2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"]], _angular_common__WEBPACK_IMPORTED_MODULE_8__["DOCUMENT"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["DOCUMENT"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["HAMMER_GESTURE_CONFIG"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵConsole"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["EventManager"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["EventManager"], [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["EVENT_MANAGER_PLUGINS"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](135680, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵDomSharedStylesHost"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵDomSharedStylesHost"], [_angular_common__WEBPACK_IMPORTED_MODULE_8__["DOCUMENT"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵDomRendererFactory2"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵDomRendererFactory2"], [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["EventManager"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵDomSharedStylesHost"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_core__WEBPACK_IMPORTED_MODULE_0__["RendererFactory2"], null, [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵDomRendererFactory2"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵSharedStylesHost"], null, [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵDomSharedStylesHost"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_core__WEBPACK_IMPORTED_MODULE_0__["Testability"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Testability"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["Meta"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["Meta"], [_angular_common__WEBPACK_IMPORTED_MODULE_8__["DOCUMENT"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["Title"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["Title"], [_angular_common__WEBPACK_IMPORTED_MODULE_8__["DOCUMENT"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpXsrfTokenExtractor"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_g"], [_angular_common__WEBPACK_IMPORTED_MODULE_8__["DOCUMENT"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_e"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_h"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_h"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpXsrfTokenExtractor"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_f"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HTTP_INTERCEPTORS"], function (p0_0) { return [p0_0]; }, [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_h"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_d"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_d"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["XhrFactory"], null, [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_d"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpXhrBackend"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpXhrBackend"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["XhrFactory"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpBackend"], null, [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpXhrBackend"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpHandler"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵHttpInterceptingHandler"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpBackend"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClient"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClient"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpHandler"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_router__WEBPACK_IMPORTED_MODULE_11__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_f"], [_angular_router__WEBPACK_IMPORTED_MODULE_11__["Router"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_router__WEBPACK_IMPORTED_MODULE_11__["NoPreloading"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["NoPreloading"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_router__WEBPACK_IMPORTED_MODULE_11__["PreloadingStrategy"], null, [_angular_router__WEBPACK_IMPORTED_MODULE_11__["NoPreloading"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](135680, _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterPreloader"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterPreloader"], [_angular_router__WEBPACK_IMPORTED_MODULE_11__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["PreloadingStrategy"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_router__WEBPACK_IMPORTED_MODULE_11__["PreloadAllModules"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["PreloadAllModules"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_router__WEBPACK_IMPORTED_MODULE_11__["ROUTER_INITIALIZER"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_i"], [_angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_g"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_BOOTSTRAP_LISTENER"], function (p0_0) { return [p0_0]; }, [_angular_router__WEBPACK_IMPORTED_MODULE_11__["ROUTER_INITIALIZER"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormBuilder"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormBuilder"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ɵangular_packages_forms_forms_i"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ɵangular_packages_forms_forms_i"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_13__["SasakiService"], _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_13__["SasakiService"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClient"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _services_auth_guard_auth_guard_service__WEBPACK_IMPORTED_MODULE_14__["AuthGuardService"], _services_auth_guard_auth_guard_service__WEBPACK_IMPORTED_MODULE_14__["AuthGuardService"], [_angular_router__WEBPACK_IMPORTED_MODULE_11__["Router"], _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_13__["SasakiService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_15__["StorageService"], _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_15__["StorageService"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _services_user_user_service__WEBPACK_IMPORTED_MODULE_16__["UserService"], _services_user_user_service__WEBPACK_IMPORTED_MODULE_16__["UserService"], [_services_storage_storage_service__WEBPACK_IMPORTED_MODULE_15__["StorageService"], _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_13__["SasakiService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _services_util_util_service__WEBPACK_IMPORTED_MODULE_17__["UtilService"], _services_util_util_service__WEBPACK_IMPORTED_MODULE_17__["UtilService"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common__WEBPACK_IMPORTED_MODULE_8__["CommonModule"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["CommonModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ErrorHandler"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_platform_browser_platform_browser_a"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgProbeToken"], function () { return [_angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_b"]()]; }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_g"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_g"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_INITIALIZER"], function (p0_0, p1_0) { return [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_platform_browser_platform_browser_h"](p0_0), _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_h"](p1_0)]; }, [[2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgProbeToken"]], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_g"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"], [[2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_INITIALIZER"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](131584, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵConsole"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ErrorHandler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationModule"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationModule"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["BrowserModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["BrowserModule"], [[3, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["BrowserModule"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientXsrfModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientXsrfModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_a"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_d"], [[3, _angular_router__WEBPACK_IMPORTED_MODULE_11__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_11__["UrlSerializer"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["DefaultUrlSerializer"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_11__["ChildrenOutletContexts"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ChildrenOutletContexts"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_router__WEBPACK_IMPORTED_MODULE_11__["ROUTER_CONFIGURATION"], { useHash: true, enableTracing: true }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_common__WEBPACK_IMPORTED_MODULE_8__["LocationStrategy"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_c"], [_angular_common__WEBPACK_IMPORTED_MODULE_8__["PlatformLocation"], [2, _angular_common__WEBPACK_IMPORTED_MODULE_8__["APP_BASE_HREF"]], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ROUTER_CONFIGURATION"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_common__WEBPACK_IMPORTED_MODULE_8__["Location"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["Location"], [_angular_common__WEBPACK_IMPORTED_MODULE_8__["LocationStrategy"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["SystemJsNgModuleLoader"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], [2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["SystemJsNgModuleLoaderConfig"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_11__["ROUTES"], function () { return [[{ path: "", redirectTo: "/", pathMatch: "full" }, { path: "", component: _components_index_index_component__WEBPACK_IMPORTED_MODULE_18__["IndexComponent"] }, { path: "auth", children: [{ path: "signin", component: _components_auth_auth_signin_auth_signin_component__WEBPACK_IMPORTED_MODULE_19__["AuthSigninComponent"] }, { path: "signout", component: _components_auth_auth_signout_auth_signout_component__WEBPACK_IMPORTED_MODULE_20__["AuthSignoutComponent"] }] }]]; }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_11__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_e"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["UrlSerializer"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ChildrenOutletContexts"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["Location"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ROUTES"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["ROUTER_CONFIGURATION"], [2, _angular_router__WEBPACK_IMPORTED_MODULE_11__["UrlHandlingStrategy"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouteReuseStrategy"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"], _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"], [[2, _angular_router__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_router_router_a"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_11__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_routing_module__WEBPACK_IMPORTED_MODULE_21__["AppRoutingModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_21__["AppRoutingModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ɵangular_packages_forms_forms_bb"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ɵangular_packages_forms_forms_bb"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵAPP_ROOT"], true, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_e"], "XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_f"], "X-XSRF-TOKEN", [])]); });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModuleNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵcmf"](_app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], [_components_app_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]], function (_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmod"]([_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵCodegenComponentFactoryResolver"], [[8, [_node_modules_angular_router_router_ngfactory__WEBPACK_IMPORTED_MODULE_3__["ɵEmptyOutletComponentNgFactory"], _components_base_base_component_ngfactory__WEBPACK_IMPORTED_MODULE_4__["BaseComponentNgFactory"], _components_index_index_component_ngfactory__WEBPACK_IMPORTED_MODULE_5__["IndexComponentNgFactory"], _components_point_card_point_card_index_point_card_index_component_ngfactory__WEBPACK_IMPORTED_MODULE_6__["PointCardIndexComponentNgFactory"], _components_point_card_point_card_transfer_complete_point_card_transfer_complete_component_ngfactory__WEBPACK_IMPORTED_MODULE_7__["PointCardTransferCompleteComponentNgFactory"], _components_point_card_point_card_transfer_input_point_card_transfer_input_component_ngfactory__WEBPACK_IMPORTED_MODULE_8__["PointCardTransferInputComponentNgFactory"], _components_coin_coin_index_coin_index_component_ngfactory__WEBPACK_IMPORTED_MODULE_9__["CoinIndexComponentNgFactory"], _components_coin_coin_payment_complete_coin_payment_complete_component_ngfactory__WEBPACK_IMPORTED_MODULE_10__["CoinPaymentCompleteComponentNgFactory"], _components_coin_coin_payment_input_coin_payment_input_component_ngfactory__WEBPACK_IMPORTED_MODULE_11__["CoinPaymentInputComponentNgFactory"], _components_coin_coin_payment_select_coin_payment_select_component_ngfactory__WEBPACK_IMPORTED_MODULE_12__["CoinPaymentSelectComponentNgFactory"], _components_auth_auth_signin_auth_signin_component_ngfactory__WEBPACK_IMPORTED_MODULE_13__["AuthSigninComponentNgFactory"], _components_auth_auth_signout_auth_signout_component_ngfactory__WEBPACK_IMPORTED_MODULE_14__["AuthSignoutComponentNgFactory"], _components_app_app_component_ngfactory__WEBPACK_IMPORTED_MODULE_15__["AppComponentNgFactory"]]], [3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"]], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleRef"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["LOCALE_ID"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_core_core_l"], [[3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["LOCALE_ID"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common__WEBPACK_IMPORTED_MODULE_16__["NgLocalization"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["NgLocaleLocalization"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["LOCALE_ID"], [2, _angular_common__WEBPACK_IMPORTED_MODULE_16__["ɵangular_packages_common_common_a"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_ID"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_core_core_f"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["IterableDiffers"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_core_core_j"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["KeyValueDiffers"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_core_core_k"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["DomSanitizer"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵangular_packages_platform_browser_platform_browser_e"], [_angular_common__WEBPACK_IMPORTED_MODULE_16__["DOCUMENT"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_core__WEBPACK_IMPORTED_MODULE_0__["Sanitizer"], null, [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["DomSanitizer"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["HAMMER_GESTURE_CONFIG"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["HammerGestureConfig"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["EVENT_MANAGER_PLUGINS"], function (p0_0, p0_1, p0_2, p1_0, p2_0, p2_1, p2_2) { return [new _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵDomEventsPlugin"](p0_0, p0_1, p0_2), new _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵKeyEventsPlugin"](p1_0), new _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵHammerGesturesPlugin"](p2_0, p2_1, p2_2)]; }, [_angular_common__WEBPACK_IMPORTED_MODULE_16__["DOCUMENT"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], [2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"]], _angular_common__WEBPACK_IMPORTED_MODULE_16__["DOCUMENT"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["DOCUMENT"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["HAMMER_GESTURE_CONFIG"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵConsole"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["EventManager"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["EventManager"], [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["EVENT_MANAGER_PLUGINS"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](135680, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵDomSharedStylesHost"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵDomSharedStylesHost"], [_angular_common__WEBPACK_IMPORTED_MODULE_16__["DOCUMENT"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵDomRendererFactory2"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵDomRendererFactory2"], [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["EventManager"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵDomSharedStylesHost"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_core__WEBPACK_IMPORTED_MODULE_0__["RendererFactory2"], null, [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵDomRendererFactory2"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵSharedStylesHost"], null, [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵDomSharedStylesHost"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_core__WEBPACK_IMPORTED_MODULE_0__["Testability"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Testability"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["Meta"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["Meta"], [_angular_common__WEBPACK_IMPORTED_MODULE_16__["DOCUMENT"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["Title"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["Title"], [_angular_common__WEBPACK_IMPORTED_MODULE_16__["DOCUMENT"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpXsrfTokenExtractor"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_g"], [_angular_common__WEBPACK_IMPORTED_MODULE_16__["DOCUMENT"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_e"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_h"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_h"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpXsrfTokenExtractor"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_f"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HTTP_INTERCEPTORS"], function (p0_0) { return [p0_0]; }, [_angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_h"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_d"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_d"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["XhrFactory"], null, [_angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_d"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpXhrBackend"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpXhrBackend"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_18__["XhrFactory"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpBackend"], null, [_angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpXhrBackend"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpHandler"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵHttpInterceptingHandler"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpBackend"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClient"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClient"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpHandler"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_router__WEBPACK_IMPORTED_MODULE_19__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_f"], [_angular_router__WEBPACK_IMPORTED_MODULE_19__["Router"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_router__WEBPACK_IMPORTED_MODULE_19__["NoPreloading"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["NoPreloading"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_router__WEBPACK_IMPORTED_MODULE_19__["PreloadingStrategy"], null, [_angular_router__WEBPACK_IMPORTED_MODULE_19__["NoPreloading"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](135680, _angular_router__WEBPACK_IMPORTED_MODULE_19__["RouterPreloader"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["RouterPreloader"], [_angular_router__WEBPACK_IMPORTED_MODULE_19__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["PreloadingStrategy"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_router__WEBPACK_IMPORTED_MODULE_19__["PreloadAllModules"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["PreloadAllModules"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_router__WEBPACK_IMPORTED_MODULE_19__["ROUTER_INITIALIZER"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_i"], [_angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_g"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_BOOTSTRAP_LISTENER"], function (p0_0) { return [p0_0]; }, [_angular_router__WEBPACK_IMPORTED_MODULE_19__["ROUTER_INITIALIZER"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormBuilder"], _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormBuilder"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_forms__WEBPACK_IMPORTED_MODULE_20__["ɵangular_packages_forms_forms_i"], _angular_forms__WEBPACK_IMPORTED_MODULE_20__["ɵangular_packages_forms_forms_i"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_21__["SasakiService"], _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_21__["SasakiService"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClient"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _services_auth_guard_auth_guard_service__WEBPACK_IMPORTED_MODULE_22__["AuthGuardService"], _services_auth_guard_auth_guard_service__WEBPACK_IMPORTED_MODULE_22__["AuthGuardService"], [_angular_router__WEBPACK_IMPORTED_MODULE_19__["Router"], _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_21__["SasakiService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_23__["StorageService"], _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_23__["StorageService"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _services_user_user_service__WEBPACK_IMPORTED_MODULE_24__["UserService"], _services_user_user_service__WEBPACK_IMPORTED_MODULE_24__["UserService"], [_services_storage_storage_service__WEBPACK_IMPORTED_MODULE_23__["StorageService"], _services_sasaki_sasaki_service__WEBPACK_IMPORTED_MODULE_21__["SasakiService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _services_util_util_service__WEBPACK_IMPORTED_MODULE_25__["UtilService"], _services_util_util_service__WEBPACK_IMPORTED_MODULE_25__["UtilService"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common__WEBPACK_IMPORTED_MODULE_16__["CommonModule"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["CommonModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ErrorHandler"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵangular_packages_platform_browser_platform_browser_a"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgProbeToken"], function () { return [_angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_b"]()]; }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_g"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_g"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_INITIALIZER"], function (p0_0, p1_0) { return [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["ɵangular_packages_platform_browser_platform_browser_h"](p0_0), _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_h"](p1_0)]; }, [[2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgProbeToken"]], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_g"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"], [[2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_INITIALIZER"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](131584, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵConsole"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ErrorHandler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationModule"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationModule"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["BrowserModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["BrowserModule"], [[3, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_17__["BrowserModule"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientXsrfModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientXsrfModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_a"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_d"], [[3, _angular_router__WEBPACK_IMPORTED_MODULE_19__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_19__["UrlSerializer"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["DefaultUrlSerializer"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_19__["ChildrenOutletContexts"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ChildrenOutletContexts"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_router__WEBPACK_IMPORTED_MODULE_19__["ROUTER_CONFIGURATION"], { useHash: true, enableTracing: true }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_common__WEBPACK_IMPORTED_MODULE_16__["LocationStrategy"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_c"], [_angular_common__WEBPACK_IMPORTED_MODULE_16__["PlatformLocation"], [2, _angular_common__WEBPACK_IMPORTED_MODULE_16__["APP_BASE_HREF"]], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ROUTER_CONFIGURATION"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_common__WEBPACK_IMPORTED_MODULE_16__["Location"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["Location"], [_angular_common__WEBPACK_IMPORTED_MODULE_16__["LocationStrategy"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["SystemJsNgModuleLoader"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], [2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["SystemJsNgModuleLoaderConfig"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_19__["ROUTES"], function () { return [[{ path: "", redirectTo: "/", pathMatch: "full" }, { path: "", component: _components_base_base_component__WEBPACK_IMPORTED_MODULE_26__["BaseComponent"], canActivate: [], children: [{ path: "", component: _components_index_index_component__WEBPACK_IMPORTED_MODULE_27__["IndexComponent"] }, { path: "point-card", children: [{ path: "", component: _components_point_card_point_card_index_point_card_index_component__WEBPACK_IMPORTED_MODULE_28__["PointCardIndexComponent"] }, { path: "transfer", children: [{ path: "complete", component: _components_point_card_point_card_transfer_complete_point_card_transfer_complete_component__WEBPACK_IMPORTED_MODULE_29__["PointCardTransferCompleteComponent"] }, { path: "input", component: _components_point_card_point_card_transfer_input_point_card_transfer_input_component__WEBPACK_IMPORTED_MODULE_30__["PointCardTransferInputComponent"] }] }] }, { path: "point-card", children: [{ path: "", component: _components_coin_coin_index_coin_index_component__WEBPACK_IMPORTED_MODULE_31__["CoinIndexComponent"] }, { path: "payment", children: [{ path: "complete", component: _components_coin_coin_payment_complete_coin_payment_complete_component__WEBPACK_IMPORTED_MODULE_32__["CoinPaymentCompleteComponent"] }, { path: "input", component: _components_coin_coin_payment_input_coin_payment_input_component__WEBPACK_IMPORTED_MODULE_33__["CoinPaymentInputComponent"] }, { path: "select", component: _components_coin_coin_payment_select_coin_payment_select_component__WEBPACK_IMPORTED_MODULE_34__["CoinPaymentSelectComponent"] }] }] }] }, { path: "auth", children: [{ path: "signin", component: _components_auth_auth_signin_auth_signin_component__WEBPACK_IMPORTED_MODULE_35__["AuthSigninComponent"] }, { path: "signout", component: _components_auth_auth_signout_auth_signout_component__WEBPACK_IMPORTED_MODULE_36__["AuthSignoutComponent"] }] }]]; }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_19__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_e"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["UrlSerializer"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ChildrenOutletContexts"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["Location"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ROUTES"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["ROUTER_CONFIGURATION"], [2, _angular_router__WEBPACK_IMPORTED_MODULE_19__["UrlHandlingStrategy"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_19__["RouteReuseStrategy"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_router__WEBPACK_IMPORTED_MODULE_19__["RouterModule"], _angular_router__WEBPACK_IMPORTED_MODULE_19__["RouterModule"], [[2, _angular_router__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_router_router_a"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_19__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_routing_module__WEBPACK_IMPORTED_MODULE_37__["AppRoutingModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_37__["AppRoutingModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_20__["ɵangular_packages_forms_forms_bb"], _angular_forms__WEBPACK_IMPORTED_MODULE_20__["ɵangular_packages_forms_forms_bb"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_20__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_20__["ReactiveFormsModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormsModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵAPP_ROOT"], true, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_e"], "XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["ɵangular_packages_common_http_http_f"], "X-XSRF-TOKEN", [])]); });
 
 
 
@@ -760,6 +807,470 @@ var AuthSignoutComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/base/base.component.ngfactory.js":
+/*!*************************************************************!*\
+  !*** ./src/app/components/base/base.component.ngfactory.js ***!
+  \*************************************************************/
+/*! exports provided: RenderType_BaseComponent, View_BaseComponent_0, View_BaseComponent_Host_0, BaseComponentNgFactory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_BaseComponent", function() { return RenderType_BaseComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_BaseComponent_0", function() { return View_BaseComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_BaseComponent_Host_0", function() { return View_BaseComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseComponentNgFactory", function() { return BaseComponentNgFactory; });
+/* harmony import */ var _base_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base.component.scss.shim.ngstyle */ "./src/app/components/base/base.component.scss.shim.ngstyle.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./base.component */ "./src/app/components/base/base.component.ts");
+/* harmony import */ var _services_user_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/user/user.service */ "./src/app/services/user/user.service.ts");
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+
+
+
+
+
+var styles_BaseComponent = [_base_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
+var RenderType_BaseComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({ encapsulation: 0, styles: styles_BaseComponent, data: {} });
+
+function View_BaseComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "div", [["class", "base"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 16777216, null, null, 1, "router-outlet", [], null, null, null, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 212992, null, 0, _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"], [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ChildrenOutletContexts"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ComponentFactoryResolver"], [8, null], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]], null, null)], function (_ck, _v) { _ck(_v, 2, 0); }, null); }
+function View_BaseComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-base", [], null, null, null, View_BaseComponent_0, RenderType_BaseComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _base_component__WEBPACK_IMPORTED_MODULE_3__["BaseComponent"], [_services_user_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"]], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+var BaseComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-base", _base_component__WEBPACK_IMPORTED_MODULE_3__["BaseComponent"], View_BaseComponent_Host_0, {}, {}, []);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/base/base.component.scss.shim.ngstyle.js":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/base/base.component.scss.shim.ngstyle.js ***!
+  \*********************************************************************/
+/*! exports provided: styles */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+var styles = [".base[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  position: absolute;\n  top: 48px;\n  bottom: 60px;\n  left: 0;\n  right: 0; }"];
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/base/base.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/components/base/base.component.ts ***!
+  \***************************************************/
+/*! exports provided: BaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseComponent", function() { return BaseComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_user_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/user/user.service */ "./src/app/services/user/user.service.ts");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+/**
+ * BaseComponent
+ */
+
+
+var BaseComponent = /** @class */ (function () {
+    function BaseComponent(user) {
+        this.user = user;
+    }
+    /**
+     * 初期化
+     * @method ngOnInit
+     */
+    BaseComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
+    return BaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-index/coin-index.component.ngfactory.js":
+/*!******************************************************************************!*\
+  !*** ./src/app/components/coin/coin-index/coin-index.component.ngfactory.js ***!
+  \******************************************************************************/
+/*! exports provided: RenderType_CoinIndexComponent, View_CoinIndexComponent_0, View_CoinIndexComponent_Host_0, CoinIndexComponentNgFactory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_CoinIndexComponent", function() { return RenderType_CoinIndexComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_CoinIndexComponent_0", function() { return View_CoinIndexComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_CoinIndexComponent_Host_0", function() { return View_CoinIndexComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoinIndexComponentNgFactory", function() { return CoinIndexComponentNgFactory; });
+/* harmony import */ var _coin_index_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./coin-index.component.scss.shim.ngstyle */ "./src/app/components/coin/coin-index/coin-index.component.scss.shim.ngstyle.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _coin_index_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./coin-index.component */ "./src/app/components/coin/coin-index/coin-index.component.ts");
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+
+
+
+var styles_CoinIndexComponent = [_coin_index_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
+var RenderType_CoinIndexComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({ encapsulation: 0, styles: styles_CoinIndexComponent, data: {} });
+
+function View_CoinIndexComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" coin-index works!\n"]))], null, null); }
+function View_CoinIndexComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-coin-index", [], null, null, null, View_CoinIndexComponent_0, RenderType_CoinIndexComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _coin_index_component__WEBPACK_IMPORTED_MODULE_2__["CoinIndexComponent"], [], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+var CoinIndexComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-coin-index", _coin_index_component__WEBPACK_IMPORTED_MODULE_2__["CoinIndexComponent"], View_CoinIndexComponent_Host_0, {}, {}, []);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-index/coin-index.component.scss.shim.ngstyle.js":
+/*!**************************************************************************************!*\
+  !*** ./src/app/components/coin/coin-index/coin-index.component.scss.shim.ngstyle.js ***!
+  \**************************************************************************************/
+/*! exports provided: styles */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+var styles = [""];
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-index/coin-index.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/components/coin/coin-index/coin-index.component.ts ***!
+  \********************************************************************/
+/*! exports provided: CoinIndexComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoinIndexComponent", function() { return CoinIndexComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+
+var CoinIndexComponent = /** @class */ (function () {
+    function CoinIndexComponent() {
+    }
+    CoinIndexComponent.prototype.ngOnInit = function () {
+    };
+    return CoinIndexComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.ngfactory.js":
+/*!****************************************************************************************************!*\
+  !*** ./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.ngfactory.js ***!
+  \****************************************************************************************************/
+/*! exports provided: RenderType_CoinPaymentCompleteComponent, View_CoinPaymentCompleteComponent_0, View_CoinPaymentCompleteComponent_Host_0, CoinPaymentCompleteComponentNgFactory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_CoinPaymentCompleteComponent", function() { return RenderType_CoinPaymentCompleteComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_CoinPaymentCompleteComponent_0", function() { return View_CoinPaymentCompleteComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_CoinPaymentCompleteComponent_Host_0", function() { return View_CoinPaymentCompleteComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoinPaymentCompleteComponentNgFactory", function() { return CoinPaymentCompleteComponentNgFactory; });
+/* harmony import */ var _coin_payment_complete_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./coin-payment-complete.component.scss.shim.ngstyle */ "./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.scss.shim.ngstyle.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _coin_payment_complete_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./coin-payment-complete.component */ "./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.ts");
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+
+
+
+var styles_CoinPaymentCompleteComponent = [_coin_payment_complete_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
+var RenderType_CoinPaymentCompleteComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({ encapsulation: 0, styles: styles_CoinPaymentCompleteComponent, data: {} });
+
+function View_CoinPaymentCompleteComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" coin-payment-complete works!\n"]))], null, null); }
+function View_CoinPaymentCompleteComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-coin-payment-complete", [], null, null, null, View_CoinPaymentCompleteComponent_0, RenderType_CoinPaymentCompleteComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _coin_payment_complete_component__WEBPACK_IMPORTED_MODULE_2__["CoinPaymentCompleteComponent"], [], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+var CoinPaymentCompleteComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-coin-payment-complete", _coin_payment_complete_component__WEBPACK_IMPORTED_MODULE_2__["CoinPaymentCompleteComponent"], View_CoinPaymentCompleteComponent_Host_0, {}, {}, []);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.scss.shim.ngstyle.js":
+/*!************************************************************************************************************!*\
+  !*** ./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.scss.shim.ngstyle.js ***!
+  \************************************************************************************************************/
+/*! exports provided: styles */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+var styles = [""];
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.ts":
+/*!******************************************************************************************!*\
+  !*** ./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.ts ***!
+  \******************************************************************************************/
+/*! exports provided: CoinPaymentCompleteComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoinPaymentCompleteComponent", function() { return CoinPaymentCompleteComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+
+var CoinPaymentCompleteComponent = /** @class */ (function () {
+    function CoinPaymentCompleteComponent() {
+    }
+    CoinPaymentCompleteComponent.prototype.ngOnInit = function () {
+    };
+    return CoinPaymentCompleteComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-payment-input/coin-payment-input.component.ngfactory.js":
+/*!**********************************************************************************************!*\
+  !*** ./src/app/components/coin/coin-payment-input/coin-payment-input.component.ngfactory.js ***!
+  \**********************************************************************************************/
+/*! exports provided: RenderType_CoinPaymentInputComponent, View_CoinPaymentInputComponent_0, View_CoinPaymentInputComponent_Host_0, CoinPaymentInputComponentNgFactory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_CoinPaymentInputComponent", function() { return RenderType_CoinPaymentInputComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_CoinPaymentInputComponent_0", function() { return View_CoinPaymentInputComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_CoinPaymentInputComponent_Host_0", function() { return View_CoinPaymentInputComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoinPaymentInputComponentNgFactory", function() { return CoinPaymentInputComponentNgFactory; });
+/* harmony import */ var _coin_payment_input_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./coin-payment-input.component.scss.shim.ngstyle */ "./src/app/components/coin/coin-payment-input/coin-payment-input.component.scss.shim.ngstyle.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _coin_payment_input_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./coin-payment-input.component */ "./src/app/components/coin/coin-payment-input/coin-payment-input.component.ts");
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+
+
+
+var styles_CoinPaymentInputComponent = [_coin_payment_input_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
+var RenderType_CoinPaymentInputComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({ encapsulation: 0, styles: styles_CoinPaymentInputComponent, data: {} });
+
+function View_CoinPaymentInputComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" coin-payment-input works!\n"]))], null, null); }
+function View_CoinPaymentInputComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-coin-payment-input", [], null, null, null, View_CoinPaymentInputComponent_0, RenderType_CoinPaymentInputComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _coin_payment_input_component__WEBPACK_IMPORTED_MODULE_2__["CoinPaymentInputComponent"], [], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+var CoinPaymentInputComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-coin-payment-input", _coin_payment_input_component__WEBPACK_IMPORTED_MODULE_2__["CoinPaymentInputComponent"], View_CoinPaymentInputComponent_Host_0, {}, {}, []);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-payment-input/coin-payment-input.component.scss.shim.ngstyle.js":
+/*!******************************************************************************************************!*\
+  !*** ./src/app/components/coin/coin-payment-input/coin-payment-input.component.scss.shim.ngstyle.js ***!
+  \******************************************************************************************************/
+/*! exports provided: styles */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+var styles = [""];
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-payment-input/coin-payment-input.component.ts":
+/*!************************************************************************************!*\
+  !*** ./src/app/components/coin/coin-payment-input/coin-payment-input.component.ts ***!
+  \************************************************************************************/
+/*! exports provided: CoinPaymentInputComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoinPaymentInputComponent", function() { return CoinPaymentInputComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+
+var CoinPaymentInputComponent = /** @class */ (function () {
+    function CoinPaymentInputComponent() {
+    }
+    CoinPaymentInputComponent.prototype.ngOnInit = function () {
+    };
+    return CoinPaymentInputComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-payment-select/coin-payment-select.component.ngfactory.js":
+/*!************************************************************************************************!*\
+  !*** ./src/app/components/coin/coin-payment-select/coin-payment-select.component.ngfactory.js ***!
+  \************************************************************************************************/
+/*! exports provided: RenderType_CoinPaymentSelectComponent, View_CoinPaymentSelectComponent_0, View_CoinPaymentSelectComponent_Host_0, CoinPaymentSelectComponentNgFactory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_CoinPaymentSelectComponent", function() { return RenderType_CoinPaymentSelectComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_CoinPaymentSelectComponent_0", function() { return View_CoinPaymentSelectComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_CoinPaymentSelectComponent_Host_0", function() { return View_CoinPaymentSelectComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoinPaymentSelectComponentNgFactory", function() { return CoinPaymentSelectComponentNgFactory; });
+/* harmony import */ var _coin_payment_select_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./coin-payment-select.component.scss.shim.ngstyle */ "./src/app/components/coin/coin-payment-select/coin-payment-select.component.scss.shim.ngstyle.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _coin_payment_select_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./coin-payment-select.component */ "./src/app/components/coin/coin-payment-select/coin-payment-select.component.ts");
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+
+
+
+var styles_CoinPaymentSelectComponent = [_coin_payment_select_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
+var RenderType_CoinPaymentSelectComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({ encapsulation: 0, styles: styles_CoinPaymentSelectComponent, data: {} });
+
+function View_CoinPaymentSelectComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" coin-payment-select works!\n"]))], null, null); }
+function View_CoinPaymentSelectComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-coin-payment-select", [], null, null, null, View_CoinPaymentSelectComponent_0, RenderType_CoinPaymentSelectComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _coin_payment_select_component__WEBPACK_IMPORTED_MODULE_2__["CoinPaymentSelectComponent"], [], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+var CoinPaymentSelectComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-coin-payment-select", _coin_payment_select_component__WEBPACK_IMPORTED_MODULE_2__["CoinPaymentSelectComponent"], View_CoinPaymentSelectComponent_Host_0, {}, {}, []);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-payment-select/coin-payment-select.component.scss.shim.ngstyle.js":
+/*!********************************************************************************************************!*\
+  !*** ./src/app/components/coin/coin-payment-select/coin-payment-select.component.scss.shim.ngstyle.js ***!
+  \********************************************************************************************************/
+/*! exports provided: styles */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+var styles = [""];
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/coin/coin-payment-select/coin-payment-select.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/components/coin/coin-payment-select/coin-payment-select.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: CoinPaymentSelectComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoinPaymentSelectComponent", function() { return CoinPaymentSelectComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+
+var CoinPaymentSelectComponent = /** @class */ (function () {
+    function CoinPaymentSelectComponent() {
+    }
+    CoinPaymentSelectComponent.prototype.ngOnInit = function () {
+    };
+    return CoinPaymentSelectComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/index/index.component.ngfactory.js":
 /*!***************************************************************!*\
   !*** ./src/app/components/index/index.component.ngfactory.js ***!
@@ -842,6 +1353,252 @@ var IndexComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/point-card/point-card-index/point-card-index.component.ngfactory.js":
+/*!************************************************************************************************!*\
+  !*** ./src/app/components/point-card/point-card-index/point-card-index.component.ngfactory.js ***!
+  \************************************************************************************************/
+/*! exports provided: RenderType_PointCardIndexComponent, View_PointCardIndexComponent_0, View_PointCardIndexComponent_Host_0, PointCardIndexComponentNgFactory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_PointCardIndexComponent", function() { return RenderType_PointCardIndexComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_PointCardIndexComponent_0", function() { return View_PointCardIndexComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_PointCardIndexComponent_Host_0", function() { return View_PointCardIndexComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PointCardIndexComponentNgFactory", function() { return PointCardIndexComponentNgFactory; });
+/* harmony import */ var _point_card_index_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./point-card-index.component.scss.shim.ngstyle */ "./src/app/components/point-card/point-card-index/point-card-index.component.scss.shim.ngstyle.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _point_card_index_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./point-card-index.component */ "./src/app/components/point-card/point-card-index/point-card-index.component.ts");
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+
+
+
+var styles_PointCardIndexComponent = [_point_card_index_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
+var RenderType_PointCardIndexComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({ encapsulation: 0, styles: styles_PointCardIndexComponent, data: {} });
+
+function View_PointCardIndexComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" point-card-index works!\n"]))], null, null); }
+function View_PointCardIndexComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-point-card-index", [], null, null, null, View_PointCardIndexComponent_0, RenderType_PointCardIndexComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _point_card_index_component__WEBPACK_IMPORTED_MODULE_2__["PointCardIndexComponent"], [], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+var PointCardIndexComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-point-card-index", _point_card_index_component__WEBPACK_IMPORTED_MODULE_2__["PointCardIndexComponent"], View_PointCardIndexComponent_Host_0, {}, {}, []);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/point-card/point-card-index/point-card-index.component.scss.shim.ngstyle.js":
+/*!********************************************************************************************************!*\
+  !*** ./src/app/components/point-card/point-card-index/point-card-index.component.scss.shim.ngstyle.js ***!
+  \********************************************************************************************************/
+/*! exports provided: styles */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+var styles = [""];
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/point-card/point-card-index/point-card-index.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/components/point-card/point-card-index/point-card-index.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: PointCardIndexComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PointCardIndexComponent", function() { return PointCardIndexComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+
+var PointCardIndexComponent = /** @class */ (function () {
+    function PointCardIndexComponent() {
+    }
+    PointCardIndexComponent.prototype.ngOnInit = function () {
+    };
+    return PointCardIndexComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.ngfactory.js":
+/*!************************************************************************************************************************!*\
+  !*** ./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.ngfactory.js ***!
+  \************************************************************************************************************************/
+/*! exports provided: RenderType_PointCardTransferCompleteComponent, View_PointCardTransferCompleteComponent_0, View_PointCardTransferCompleteComponent_Host_0, PointCardTransferCompleteComponentNgFactory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_PointCardTransferCompleteComponent", function() { return RenderType_PointCardTransferCompleteComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_PointCardTransferCompleteComponent_0", function() { return View_PointCardTransferCompleteComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_PointCardTransferCompleteComponent_Host_0", function() { return View_PointCardTransferCompleteComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PointCardTransferCompleteComponentNgFactory", function() { return PointCardTransferCompleteComponentNgFactory; });
+/* harmony import */ var _point_card_transfer_complete_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./point-card-transfer-complete.component.scss.shim.ngstyle */ "./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.scss.shim.ngstyle.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _point_card_transfer_complete_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./point-card-transfer-complete.component */ "./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.ts");
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+
+
+
+var styles_PointCardTransferCompleteComponent = [_point_card_transfer_complete_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
+var RenderType_PointCardTransferCompleteComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({ encapsulation: 0, styles: styles_PointCardTransferCompleteComponent, data: {} });
+
+function View_PointCardTransferCompleteComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" point-card-transfer-complete works!\n"]))], null, null); }
+function View_PointCardTransferCompleteComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-point-card-transfer-complete", [], null, null, null, View_PointCardTransferCompleteComponent_0, RenderType_PointCardTransferCompleteComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _point_card_transfer_complete_component__WEBPACK_IMPORTED_MODULE_2__["PointCardTransferCompleteComponent"], [], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+var PointCardTransferCompleteComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-point-card-transfer-complete", _point_card_transfer_complete_component__WEBPACK_IMPORTED_MODULE_2__["PointCardTransferCompleteComponent"], View_PointCardTransferCompleteComponent_Host_0, {}, {}, []);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.scss.shim.ngstyle.js":
+/*!********************************************************************************************************************************!*\
+  !*** ./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.scss.shim.ngstyle.js ***!
+  \********************************************************************************************************************************/
+/*! exports provided: styles */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+var styles = [""];
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.ts":
+/*!**************************************************************************************************************!*\
+  !*** ./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.ts ***!
+  \**************************************************************************************************************/
+/*! exports provided: PointCardTransferCompleteComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PointCardTransferCompleteComponent", function() { return PointCardTransferCompleteComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+
+var PointCardTransferCompleteComponent = /** @class */ (function () {
+    function PointCardTransferCompleteComponent() {
+    }
+    PointCardTransferCompleteComponent.prototype.ngOnInit = function () {
+    };
+    return PointCardTransferCompleteComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.ngfactory.js":
+/*!******************************************************************************************************************!*\
+  !*** ./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.ngfactory.js ***!
+  \******************************************************************************************************************/
+/*! exports provided: RenderType_PointCardTransferInputComponent, View_PointCardTransferInputComponent_0, View_PointCardTransferInputComponent_Host_0, PointCardTransferInputComponentNgFactory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_PointCardTransferInputComponent", function() { return RenderType_PointCardTransferInputComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_PointCardTransferInputComponent_0", function() { return View_PointCardTransferInputComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_PointCardTransferInputComponent_Host_0", function() { return View_PointCardTransferInputComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PointCardTransferInputComponentNgFactory", function() { return PointCardTransferInputComponentNgFactory; });
+/* harmony import */ var _point_card_transfer_input_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./point-card-transfer-input.component.scss.shim.ngstyle */ "./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.scss.shim.ngstyle.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _point_card_transfer_input_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./point-card-transfer-input.component */ "./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.ts");
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+
+
+
+var styles_PointCardTransferInputComponent = [_point_card_transfer_input_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
+var RenderType_PointCardTransferInputComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({ encapsulation: 0, styles: styles_PointCardTransferInputComponent, data: {} });
+
+function View_PointCardTransferInputComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" point-card-transfer-input works!\n"]))], null, null); }
+function View_PointCardTransferInputComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-point-card-transfer-input", [], null, null, null, View_PointCardTransferInputComponent_0, RenderType_PointCardTransferInputComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _point_card_transfer_input_component__WEBPACK_IMPORTED_MODULE_2__["PointCardTransferInputComponent"], [], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+var PointCardTransferInputComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-point-card-transfer-input", _point_card_transfer_input_component__WEBPACK_IMPORTED_MODULE_2__["PointCardTransferInputComponent"], View_PointCardTransferInputComponent_Host_0, {}, {}, []);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.scss.shim.ngstyle.js":
+/*!**************************************************************************************************************************!*\
+  !*** ./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.scss.shim.ngstyle.js ***!
+  \**************************************************************************************************************************/
+/*! exports provided: styles */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+ * tslint:disable
+ */ 
+var styles = [""];
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.ts":
+/*!********************************************************************************************************!*\
+  !*** ./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.ts ***!
+  \********************************************************************************************************/
+/*! exports provided: PointCardTransferInputComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PointCardTransferInputComponent", function() { return PointCardTransferInputComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/fesm5/core.js");
+
+var PointCardTransferInputComponent = /** @class */ (function () {
+    function PointCardTransferInputComponent() {
+    }
+    PointCardTransferInputComponent.prototype.ngOnInit = function () {
+    };
+    return PointCardTransferInputComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/routes/auth.route.ts":
 /*!**************************************!*\
   !*** ./src/app/routes/auth.route.ts ***!
@@ -864,6 +1621,82 @@ var route = {
     children: [
         { path: 'signin', component: _components_auth_auth_signin_auth_signin_component__WEBPACK_IMPORTED_MODULE_0__["AuthSigninComponent"] },
         { path: 'signout', component: _components_auth_auth_signout_auth_signout_component__WEBPACK_IMPORTED_MODULE_1__["AuthSignoutComponent"] }
+    ]
+};
+
+
+/***/ }),
+
+/***/ "./src/app/routes/coin.route.ts":
+/*!**************************************!*\
+  !*** ./src/app/routes/coin.route.ts ***!
+  \**************************************/
+/*! exports provided: route */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "route", function() { return route; });
+/* harmony import */ var _components_coin_coin_index_coin_index_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/coin/coin-index/coin-index.component */ "./src/app/components/coin/coin-index/coin-index.component.ts");
+/* harmony import */ var _components_coin_coin_payment_complete_coin_payment_complete_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/coin/coin-payment-complete/coin-payment-complete.component */ "./src/app/components/coin/coin-payment-complete/coin-payment-complete.component.ts");
+/* harmony import */ var _components_coin_coin_payment_input_coin_payment_input_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/coin/coin-payment-input/coin-payment-input.component */ "./src/app/components/coin/coin-payment-input/coin-payment-input.component.ts");
+/* harmony import */ var _components_coin_coin_payment_select_coin_payment_select_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/coin/coin-payment-select/coin-payment-select.component */ "./src/app/components/coin/coin-payment-select/coin-payment-select.component.ts");
+
+
+
+
+/**
+ * コインルーティング
+ */
+var route = {
+    path: 'point-card',
+    children: [
+        { path: '', component: _components_coin_coin_index_coin_index_component__WEBPACK_IMPORTED_MODULE_0__["CoinIndexComponent"] },
+        {
+            path: 'payment',
+            children: [
+                { path: 'complete', component: _components_coin_coin_payment_complete_coin_payment_complete_component__WEBPACK_IMPORTED_MODULE_1__["CoinPaymentCompleteComponent"] },
+                { path: 'input', component: _components_coin_coin_payment_input_coin_payment_input_component__WEBPACK_IMPORTED_MODULE_2__["CoinPaymentInputComponent"] },
+                { path: 'select', component: _components_coin_coin_payment_select_coin_payment_select_component__WEBPACK_IMPORTED_MODULE_3__["CoinPaymentSelectComponent"] }
+            ]
+        }
+    ]
+};
+
+
+/***/ }),
+
+/***/ "./src/app/routes/point-card.route.ts":
+/*!********************************************!*\
+  !*** ./src/app/routes/point-card.route.ts ***!
+  \********************************************/
+/*! exports provided: route */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "route", function() { return route; });
+/* harmony import */ var _components_point_card_point_card_index_point_card_index_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/point-card/point-card-index/point-card-index.component */ "./src/app/components/point-card/point-card-index/point-card-index.component.ts");
+/* harmony import */ var _components_point_card_point_card_transfer_complete_point_card_transfer_complete_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/point-card/point-card-transfer-complete/point-card-transfer-complete.component */ "./src/app/components/point-card/point-card-transfer-complete/point-card-transfer-complete.component.ts");
+/* harmony import */ var _components_point_card_point_card_transfer_input_point_card_transfer_input_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/point-card/point-card-transfer-input/point-card-transfer-input.component */ "./src/app/components/point-card/point-card-transfer-input/point-card-transfer-input.component.ts");
+// tslint:disable:max-line-length
+
+
+
+/**
+ * ポイント＆カードルーティング
+ */
+var route = {
+    path: 'point-card',
+    children: [
+        { path: '', component: _components_point_card_point_card_index_point_card_index_component__WEBPACK_IMPORTED_MODULE_0__["PointCardIndexComponent"] },
+        {
+            path: 'transfer',
+            children: [
+                { path: 'complete', component: _components_point_card_point_card_transfer_complete_point_card_transfer_complete_component__WEBPACK_IMPORTED_MODULE_1__["PointCardTransferCompleteComponent"] },
+                { path: 'input', component: _components_point_card_point_card_transfer_input_point_card_transfer_input_component__WEBPACK_IMPORTED_MODULE_2__["PointCardTransferInputComponent"] }
+            ]
+        }
     ]
 };
 

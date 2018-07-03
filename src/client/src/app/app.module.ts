@@ -12,7 +12,14 @@ import { AppComponent } from './components/app/app.component';
 import { AuthSigninComponent } from './components/auth/auth-signin/auth-signin.component';
 import { AuthSignoutComponent } from './components/auth/auth-signout/auth-signout.component';
 import { BaseComponent } from './components/base/base.component';
+import { CoinIndexComponent } from './components/coin/coin-index/coin-index.component';
+import { CoinPaymentCompleteComponent } from './components/coin/coin-payment-complete/coin-payment-complete.component';
+import { CoinPaymentInputComponent } from './components/coin/coin-payment-input/coin-payment-input.component';
+import { CoinPaymentSelectComponent } from './components/coin/coin-payment-select/coin-payment-select.component';
 import { IndexComponent } from './components/index/index.component';
+import { PointCardIndexComponent } from './components/point-card/point-card-index/point-card-index.component';
+import { PointCardTransferCompleteComponent } from './components/point-card/point-card-transfer-complete/point-card-transfer-complete.component';
+import { PointCardTransferInputComponent } from './components/point-card/point-card-transfer-input/point-card-transfer-input.component';
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
 import { SasakiService } from './services/sasaki/sasaki.service';
 import { StorageService } from './services/storage/storage.service';
@@ -26,7 +33,14 @@ import { UtilService } from './services/util/util.service';
         BaseComponent,
         AuthSigninComponent,
         AuthSignoutComponent,
-        IndexComponent
+        IndexComponent,
+        CoinIndexComponent,
+        CoinPaymentSelectComponent,
+        CoinPaymentInputComponent,
+        CoinPaymentCompleteComponent,
+        PointCardIndexComponent,
+        PointCardTransferInputComponent,
+        PointCardTransferCompleteComponent
     ],
     imports: [
         BrowserModule,
