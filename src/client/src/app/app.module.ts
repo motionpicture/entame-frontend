@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { AuthSigninComponent } from './components/auth/auth-signin/auth-signin.component';
@@ -17,6 +18,8 @@ import { CoinPaymentCompleteComponent } from './components/coin/coin-payment-com
 import { CoinPaymentInputComponent } from './components/coin/coin-payment-input/coin-payment-input.component';
 import { CoinPaymentSelectComponent } from './components/coin/coin-payment-select/coin-payment-select.component';
 import { IndexComponent } from './components/index/index.component';
+import { HeaderComponent } from './components/parts/header/header.component';
+import { PageComponent } from './components/parts/page/page.component';
 import { PointCardIndexComponent } from './components/point-card/point-card-index/point-card-index.component';
 import { PointCardTransferCompleteComponent } from './components/point-card/point-card-transfer-complete/point-card-transfer-complete.component';
 import { PointCardTransferInputComponent } from './components/point-card/point-card-transfer-input/point-card-transfer-input.component';
@@ -40,9 +43,12 @@ import { UtilService } from './services/util/util.service';
         CoinPaymentCompleteComponent,
         PointCardIndexComponent,
         PointCardTransferInputComponent,
-        PointCardTransferCompleteComponent
+        PointCardTransferCompleteComponent,
+        HeaderComponent,
+        PageComponent
     ],
     imports: [
+        NgbModule.forRoot(),
         BrowserModule,
         HttpClientModule,
         AppRoutingModule,

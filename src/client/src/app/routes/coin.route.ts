@@ -7,7 +7,7 @@ import { CoinPaymentSelectComponent } from '../components/coin/coin-payment-sele
  * コインルーティング
  */
 export const route = {
-    path: 'point-card',
+    path: 'coin',
     children: [
         { path: '', component: CoinIndexComponent },
         {
