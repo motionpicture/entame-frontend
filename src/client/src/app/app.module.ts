@@ -28,6 +28,7 @@ import { SasakiService } from './services/sasaki/sasaki.service';
 import { StorageService } from './services/storage/storage.service';
 import { UserService } from './services/user/user.service';
 import { UtilService } from './services/util/util.service';
+import { HeaderMenuComponent } from './components/parts/header-menu/header-menu.component';
 
 // tslint:disable-next-line:no-stateless-class
 @NgModule({
@@ -45,7 +46,8 @@ import { UtilService } from './services/util/util.service';
         PointCardTransferInputComponent,
         PointCardTransferCompleteComponent,
         HeaderComponent,
-        PageComponent
+        PageComponent,
+        HeaderMenuComponent
     ],
     imports: [
         NgbModule.forRoot(),

@@ -1,8 +1,19 @@
-<nav class="navbar navbar-light bg-light fixed-top">
-    <div class="navbar-brand mx-auto">
-        <img src="/assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+<nav class="navbar fixed-top bg-primary text-white">
+    <div *ngIf="page.prev !== null" class="position-absolute prev-button" [routerLink]="page.prev">
+        <div></div>
+        <div></div>
     </div>
-    <div class="position-absolute menu-button">
-        <i class="fas fa-bars"></i>
+    <div class="mx-auto py-2 h5 m-0">
+        <div *ngIf="page.url === '/'" class="d-inline-block">
+            <img src="/assets/images/logo.png" width="20" height="20" class="align-bottom mr-1" alt="">Entame Coin
+        </div>
+        <div *ngIf="page.url !== '/'" class="d-inline-block">{{ page.title }}</div>
+    </div>
+    <div class="position-absolute menu-button" [class.active]="isMenuOpen" (click)="(isMenuOpen) ? menuClose() : menuOpen()">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 </nav>
+
+<app-header-menu [isOpen]="isMenuOpen" (close)="menuClose()"></app-header-menu>

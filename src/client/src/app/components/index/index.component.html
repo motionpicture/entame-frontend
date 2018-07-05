@@ -1,11 +1,87 @@
-<app-page>
-    <div class="col-12">
-        <p routerLink="/coin">エンタメコイン照会</p>
-        <p routerLink="/coin/payment/select">入金方法選択</p>
-        <p routerLink="/coin/payment/input">金額入力</p>
-        <p routerLink="/coin/payment/complete">入金完了</p>
-        <p routerLink="/point-card">ポイント＆カード</p>
-        <p routerLink="/point-card/transfer/input">ポイント移動 -入力</p>
-        <p routerLink="/point-card/transfer/complete">ポイント移動 -完了</p>
+<app-page class="bg-image">
+    <div class="bg-light-gray">
+        <div class="row p-2">
+            <div class="col-6">エンタメコイン残高</div>
+            <div class="col-6 text-right">1200円</div>
+        </div>
+    </div>
+    <div class="bg-gray mb-4">
+        <div class="row p-2">
+            <div class="col-6">共通ポイント</div>
+            <div class="col-6 text-right">1200pt</div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="d-flex justify-content-around mb-4">
+            <div class="bg-primary circle rounded-circle text-center pt-4">
+                <div>
+                    <img src="/assets/images/logo.png" width="30" height="30" class="mb-2" alt="">
+                </div>
+                <div class="small-text">エンタメコイン</div>
+            </div>
+            <div class="bg-primary circle rounded-circle text-center pt-4">
+                <div>
+                    <img src="/assets/images/logo.png" width="30" height="30" class="mb-2" alt="">
+                </div>
+                <div class="small-text">ポイントカード/
+                    <br>エールカード</div>
+            </div>
+        </div>
+
+        <ul class="d-flex justify-content-around mb-4 menu">
+            <li class="text-center">
+                <div>
+                    <img src="/assets/images/logo.png" width="30" height="30" class="mb-2" alt="">
+                </div>
+                <div class="small-x-text">チケット
+                    <br>購入</div>
+            </li>
+            <li class="text-center">
+                <div>
+                    <img src="/assets/images/logo.png" width="30" height="30" class="mb-2" alt="">
+                </div>
+                <div class="small-x-text">チケット
+                    <br>ホルダー</div>
+            </li>
+            <li class="text-center">
+                <div>
+                    <img src="/assets/images/logo.png" width="30" height="30" class="mb-2" alt="">
+                </div>
+                <div class="small-x-text">グッズ
+                    <br>購入</div>
+            </li>
+            <li class="text-center">
+                <div>
+                    <img src="/assets/images/logo.png" width="30" height="30" class="mb-2" alt="">
+                </div>
+                <div class="small-x-text">友達</div>
+            </li>
+        </ul>
+
+        <div class="text-center mb-4">
+            <strong>For You</strong>
+        </div>
+
+        <ul class="grid">
+            <li>
+                <div class="mb-1">
+                    <img class="w-100" src="/assets/images/test.png">
+                </div>
+                <p class="small-x-text mb-0">メインビジュアル＆ロゴ、グッズ全ラインナップ解禁</p>
+            </li>
+            <li>
+                <div class="mb-1">
+                    <img class="w-100" src="/assets/images/test.png">
+                </div>
+                <p class="small-x-text mb-0">メインビジュアル＆ロゴ、グッズ全ラインナップ解禁</p>
+            </li>
+            <li>
+                <div class="mb-1">
+                    <img class="w-100" src="/assets/images/test.png">
+                </div>
+                <p class="small-x-text mb-0">メインビジュアル＆ロゴ、グッズ全ラインナップ解禁</p>
+            </li>
+        </ul>
     </div>
 </app-page>

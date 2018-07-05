@@ -2,10 +2,10 @@
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
-$body-bg: #FFF;
-$body-color: #333;
+$body-bg: #000;
+$body-color: #FFF;
 $theme-colors: (
-    primary: $blue, 
+    primary: $purple, 
     secondary: $gray-600, 
     success: $green, 
     info: $cyan, 

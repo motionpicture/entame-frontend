@@ -1,0 +1,13 @@
+<div class="cover" [class.active]="isOpen" (click)="close.emit()"></div>
+
+<div class="menu" [class.active]="isOpen">
+    <div class="container">
+        <li (click)="close.emit()" routerLink="/coin">エンタメコイン照会</li>
+        <li (click)="close.emit()" routerLink="/coin/payment/select">入金方法選択</li>
+        <li (click)="close.emit()" routerLink="/coin/payment/input">金額入力</li>
+        <li (click)="close.emit()" routerLink="/coin/payment/complete">入金完了</li>
+        <li (click)="close.emit()" routerLink="/point-card">ポイント＆カード</li>
+        <li (click)="close.emit()" routerLink="/point-card/transfer/input">ポイント移動 -入力</li>
+        <li (click)="close.emit()" routerLink="/point-card/transfer/complete">ポイント移動 -完了</li>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.bg-image {
+    background-image: url(/assets/images/bg_01.jpg);
+    background-size: cover;
+}
+
+.circle {
+    width: 140px;
+    height: 140px;
+}
+
+.menu {
+    li {
+        width: 50px;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
