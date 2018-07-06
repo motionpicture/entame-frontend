@@ -18,6 +18,7 @@ import { CoinPaymentCompleteComponent } from './components/coin/coin-payment-com
 import { CoinPaymentInputComponent } from './components/coin/coin-payment-input/coin-payment-input.component';
 import { CoinPaymentSelectComponent } from './components/coin/coin-payment-select/coin-payment-select.component';
 import { IndexComponent } from './components/index/index.component';
+import { HeaderMenuComponent } from './components/parts/header-menu/header-menu.component';
 import { HeaderComponent } from './components/parts/header/header.component';
 import { PageComponent } from './components/parts/page/page.component';
 import { PointCardIndexComponent } from './components/point-card/point-card-index/point-card-index.component';
@@ -28,7 +29,6 @@ import { SasakiService } from './services/sasaki/sasaki.service';
 import { StorageService } from './services/storage/storage.service';
 import { UserService } from './services/user/user.service';
 import { UtilService } from './services/util/util.service';
-import { HeaderMenuComponent } from './components/parts/header-menu/header-menu.component';
 
 // tslint:disable-next-line:no-stateless-class
 @NgModule({

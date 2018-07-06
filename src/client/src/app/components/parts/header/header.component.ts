@@ -13,7 +13,7 @@ interface IPage {
  */
 const pages: IPage[] = [
     { url: '/', title: 'TOP', prev: null },
-    { url: '/coin', title: 'エンタメコイン残高', prev: '/' },
+    { url: '/coin', title: 'エンタメコイン', prev: '/' },
     { url: '/coin/payment/complete', title: 'エンタメコイン入金', prev: '/coin' },
     { url: '/coin/payment/input', title: 'エンタメコイン入金', prev: '/coin/payment/select' },
     { url: '/coin/payment/select', title: 'エンタメコイン入金', prev: '/coin' },

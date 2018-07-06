@@ -1,21 +1,15 @@
-.bg-image {
-    background-image: url(/assets/images/bg_01.jpg);
-    background-size: cover;
-}
 
-.circle {
-    width: 140px;
-    height: 140px;
+.main {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
 }
 
 .menu {
-    li {
-        width: 50px;
-    }
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
 }
 
-.grid {
-    display: grid;
+.lineup {
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
 }

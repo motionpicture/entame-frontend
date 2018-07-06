@@ -1,0 +1,10 @@
+.buttons {
+    grid-template-columns: 100px 100px;
+    grid-gap: 30px;
+}
+
+.lineup {
+    li {
+        grid-template-columns: 2fr 1fr;
+    }
+}
