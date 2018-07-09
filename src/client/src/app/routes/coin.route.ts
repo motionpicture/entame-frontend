@@ -1,6 +1,7 @@
 import { CoinIndexComponent } from '../components/coin/coin-index/coin-index.component';
+import { CoinPaymentAccountComponent } from '../components/coin/coin-payment-account/coin-payment-account.component';
 import { CoinPaymentCompleteComponent } from '../components/coin/coin-payment-complete/coin-payment-complete.component';
-import { CoinPaymentInputComponent } from '../components/coin/coin-payment-input/coin-payment-input.component';
+import { CoinPaymentCreditComponent } from '../components/coin/coin-payment-credit/coin-payment-credit.component';
 import { CoinPaymentSelectComponent } from '../components/coin/coin-payment-select/coin-payment-select.component';
 
 /**
@@ -14,7 +15,8 @@ export const route = {
             path: 'payment',
             children: [
                 { path: 'complete', component: CoinPaymentCompleteComponent },
-                { path: 'input', component: CoinPaymentInputComponent },
+                { path: 'credit', component: CoinPaymentCreditComponent },
+                { path: 'account', component: CoinPaymentAccountComponent },
                 { path: 'select', component: CoinPaymentSelectComponent }
             ]
         }

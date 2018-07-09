@@ -1,0 +1,9 @@
+.buttons {
+    grid-template-columns: 100px 100px;
+    grid-gap: 30px;
+}
+
+.cards {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}

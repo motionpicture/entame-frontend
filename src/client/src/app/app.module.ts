@@ -14,13 +14,17 @@ import { AuthSigninComponent } from './components/auth/auth-signin/auth-signin.c
 import { AuthSignoutComponent } from './components/auth/auth-signout/auth-signout.component';
 import { BaseComponent } from './components/base/base.component';
 import { CoinIndexComponent } from './components/coin/coin-index/coin-index.component';
+import { CoinPaymentAccountComponent } from './components/coin/coin-payment-account/coin-payment-account.component';
 import { CoinPaymentCompleteComponent } from './components/coin/coin-payment-complete/coin-payment-complete.component';
+import { CoinPaymentCreditComponent } from './components/coin/coin-payment-credit/coin-payment-credit.component';
 import { CoinPaymentInputComponent } from './components/coin/coin-payment-input/coin-payment-input.component';
 import { CoinPaymentSelectComponent } from './components/coin/coin-payment-select/coin-payment-select.component';
 import { IndexComponent } from './components/index/index.component';
+import { CoinHeaderComponent } from './components/parts/coin-header/coin-header.component';
 import { HeaderMenuComponent } from './components/parts/header-menu/header-menu.component';
 import { HeaderComponent } from './components/parts/header/header.component';
 import { PageComponent } from './components/parts/page/page.component';
+import { PointCardHeaderComponent } from './components/parts/point-card-header/point-card-header.component';
 import { PointCardIndexComponent } from './components/point-card/point-card-index/point-card-index.component';
 import { PointCardTransferCompleteComponent } from './components/point-card/point-card-transfer-complete/point-card-transfer-complete.component';
 import { PointCardTransferInputComponent } from './components/point-card/point-card-transfer-input/point-card-transfer-input.component';
@@ -47,7 +51,11 @@ import { UtilService } from './services/util/util.service';
         PointCardTransferCompleteComponent,
         HeaderComponent,
         PageComponent,
-        HeaderMenuComponent
+        HeaderMenuComponent,
+        CoinPaymentCreditComponent,
+        CoinPaymentAccountComponent,
+        CoinHeaderComponent,
+        PointCardHeaderComponent
     ],
     imports: [
         NgbModule.forRoot(),

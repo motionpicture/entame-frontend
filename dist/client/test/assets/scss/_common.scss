@@ -54,6 +54,12 @@ body {
     }
 }
 
+.disabled {
+    border: 1px solid #FFF;
+    background-color: transparent !important;
+    opacity: 0.75;
+}
+
 .bg-image-01 {
     background-image: url(/assets/images/bg_01.jpg);
     background-size: cover;

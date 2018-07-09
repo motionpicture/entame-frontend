@@ -1,5 +1,60 @@
-<app-page>
-    <div class="col-12">
-        <p class="h1">ポイント＆カード</p>
+<app-page class="bg-image-01">
+    <app-point-card-header></app-point-card-header>
+    <div class="container">
+
+        <div class="grid align-items-center justify-content-center mb-4 buttons">
+            <div class="bg-primary square rounded-circle text-center disabled">
+                <div class="inner d-flex align-items-center justify-content-center">
+                    <div>
+                        <img src="/assets/images/logo.png" width="30" height="30" class="mb-2" alt="">
+                        <div class="small-text">ポイント
+                            <br>詳細</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-primary square rounded-circle text-center" routerLink="/point-card/transfer/input">
+                <div class="inner d-flex align-items-center justify-content-center">
+                    <div>
+                        <img src="/assets/images/logo.png" width="30" height="30" class="mb-2" alt="">
+                        <div class="small-text">ポイント
+                            <br>移動</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mb-4">
+            <strong>エールカード一覧</strong>
+        </div>
+
+        <ul class="cards grid mb-4">
+            <li class="text-center">
+                <img class="w-100" src="/assets/images/test.png">
+                <div class="bg-primary py-1">TEST</div>
+                <div class="bg-light py-1">
+                    <span class="large-text text-dark align-middle">1200pt</span>
+                    <span class="small-x-text text-primary ml-1">(+500pt)</span>
+                </div>
+            </li>
+            <li class="text-center">
+                <img class="w-100" src="/assets/images/test.png">
+                <div class="bg-primary py-1">TEST</div>
+                <div class="bg-light py-1">
+                    <span class="large-text text-dark align-middle">1200pt</span>
+                    <span class="small-x-text text-primary ml-1">(+500pt)</span>
+                </div>
+            </li>
+            <li class="text-center">
+                <img class="w-100" src="/assets/images/test.png">
+                <div class="bg-primary py-1">TEST</div>
+                <div class="bg-light py-1">
+                    <span class="large-text text-dark align-middle">1200pt</span>
+                    <span class="small-x-text text-danger ml-1">(-500pt)</span>
+                </div>
+            </li>
+        </ul>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary w-50 small-text">エールカード追加</button>
+        </div>
     </div>
+
 </app-page>
