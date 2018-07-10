@@ -15,7 +15,7 @@
     "e2e": "ng e2e",
     "start": "npm run start-server",
     "ssl": "node dist/server/ssl",
-    "start-server-ssl": "node dist/server/ssl",
+    "start-server": "node dist/server/index",
     "build-server": "tsc --project src/server --outDir dist/server --locale ja-jp",
     "lint-server": "tslint --config tslint.json src/server/**/**.ts --exclude **/**.spec.ts --project src/server/tsconfig.json",
     "check": "npm run lint && nsp check",
