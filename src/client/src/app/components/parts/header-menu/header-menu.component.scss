@@ -14,14 +14,16 @@
 .menu {
     position: fixed;
     top: 53px;
-    // bottom: 0;
+    bottom: 0;
     right: -100%;
     z-index: 20;
-    background-color: #000;
     width: 100%;
     overflow: scroll;
     transition: right 0.1s;
     &.active {
         right: 0;
+    }
+    ul {
+        overflow: auto;
     }
 }

@@ -1,4 +1,4 @@
-<app-page class="bg-image-01">
+<app-page>
     <app-point-card-header></app-point-card-header>
     <div class="container">
         <form action="" method="post">
@@ -15,7 +15,7 @@
                 </select>
             </div>
             <div class="mb-4 text-center">
-                <img src="/assets/images/logo.png" width="30" height="30" alt="">
+                <i class="fas fa-arrow-down large-x-text"></i>
             </div>
             <div class="text-center mb-4">
                 <strong>移動先選択</strong>
@@ -37,7 +37,7 @@
                 <p class="small-x-text text-center">最大5000ptまで移動できます。</p>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-primary w-50 small-text">移動する</button>
+                <button type="submit" class="btn btn-primary w-50 small-text" routerLink="/point-card/transfer/complete">移動する</button>
             </div>
         </form>
     </div>

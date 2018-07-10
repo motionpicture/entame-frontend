@@ -1,7 +1,9 @@
 <div class="cover" [class.active]="isOpen" (click)="close.emit()"></div>
 
-<div class="menu bg-secondary" [class.active]="isOpen">
-    <ul class="mb-0">
+<div class="menu" [class.active]="isOpen">
+    <ul class="mb-0 bg-secondary">
+        <li class="border-bottom p-3" (click)="close.emit()" routerLink="/auth">ログイン</li>
+        <li class="border-bottom p-3" (click)="close.emit()" routerLink="/">TOP</li>
         <li class="border-bottom p-3" (click)="close.emit()" routerLink="/coin">エンタメコイン照会</li>
         <li class="border-bottom p-3" (click)="close.emit()" routerLink="/coin/payment/select">入金方法選択</li>
         <!-- <li class="border-bottom p-3" (click)="close.emit()" routerLink="/coin/payment/input">金額入力</li> -->

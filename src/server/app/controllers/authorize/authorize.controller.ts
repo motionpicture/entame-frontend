@@ -20,7 +20,7 @@ export async function getCredentials(req: Request, res: Response) {
         }
         const authModel = new Auth2Model(req.session.auth);
         const options = {
-            endpoint: (<string>process.env.SSKTS_API_ENDPOINT),
+            endpoint: (<string>process.env.API_ENDPOINT),
             auth: authModel.create()
         };
         const accessToken = await options.auth.getAccessToken();

@@ -4,8 +4,9 @@
         <div></div>
     </div>
     <div class="mx-auto py-2">
-        <div *ngIf="page.url === '/'" class="d-inline-block">
-            <img src="/assets/images/logo.png" width="20" height="20" class="align-bottom mr-1" alt="">Entame Coin
+        <div *ngIf="page.url === '/'" class="d-flex align-items-center">
+            <img src="/assets/images/logo.png" width="20" height="20" class="mr-1" alt="">
+            <span>Entame Coin</span>
         </div>
         <div *ngIf="page.url !== '/'" class="d-inline-block">{{ page.title }}</div>
     </div>

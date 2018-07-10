@@ -82,7 +82,7 @@ export class SasakiService {
         await this.authorize();
 
         return {
-            endpoint: environment.SSKTS_API_ENDPOINT,
+            endpoint: environment.API_ENDPOINT,
             auth: this.auth
         };
     }

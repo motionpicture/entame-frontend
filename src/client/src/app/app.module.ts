@@ -10,6 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
+import { AuthIndexComponent } from './components/auth/auth-index/auth-index.component';
 import { AuthSigninComponent } from './components/auth/auth-signin/auth-signin.component';
 import { AuthSignoutComponent } from './components/auth/auth-signout/auth-signout.component';
 import { BaseComponent } from './components/base/base.component';
@@ -55,7 +56,8 @@ import { UtilService } from './services/util/util.service';
         CoinPaymentCreditComponent,
         CoinPaymentAccountComponent,
         CoinHeaderComponent,
-        PointCardHeaderComponent
+        PointCardHeaderComponent,
+        AuthIndexComponent
     ],
     imports: [
         NgbModule.forRoot(),

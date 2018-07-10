@@ -31,14 +31,6 @@ body {
     display: grid;
 }
 
-.align-items-center {
-    align-items: center;
-}
-
-.justify-content-center {
-    justify-content: center;
-}
-
 .square {
     position: relative;
     &::before {
@@ -57,7 +49,7 @@ body {
 .disabled {
     border: 1px solid #FFF;
     background-color: transparent !important;
-    opacity: 0.75;
+    opacity: 0.65;
 }
 
 .bg-image-01 {

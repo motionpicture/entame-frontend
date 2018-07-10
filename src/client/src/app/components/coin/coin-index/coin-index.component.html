@@ -1,24 +1,25 @@
-<app-page class="bg-image-01">
+<app-page>
     <app-coin-header></app-coin-header>
     <div class="container">
 
         <div class="grid align-items-center justify-content-center mb-4 buttons">
+            <div class="bg-primary square rounded-circle text-center disabled">
+                <div class="inner d-flex align-items-center justify-content-center">
+                    <div>
+                        <i class="fas fa-align-left mb-2 large-x-text"></i>
+                        <div class="small-text">詳細</div>
+                    </div>
+                </div>
+            </div>
             <div class="bg-primary square rounded-circle text-center" routerLink="/coin/payment/select">
                 <div class="inner d-flex align-items-center justify-content-center">
                     <div>
-                        <img src="/assets/images/logo.png" width="30" height="30" class="mb-2" alt="">
+                        <i class="fas fa-arrow-up mb-2 large-x-text"></i>
                         <div class="small-text">入金</div>
                     </div>
                 </div>
             </div>
-            <div class="bg-primary square rounded-circle text-center disabled">
-                <div class="inner d-flex align-items-center justify-content-center">
-                    <div>
-                        <img src="/assets/images/logo.png" width="30" height="30" class="mb-2" alt="">
-                        <div class="small-text">出金</div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
     <div class="text-center mb-4">

@@ -6,5 +6,5 @@ export const environment = {
     production: true,
     version: '1.0.0',
 
-    SSKTS_API_ENDPOINT: 'https://sskts-api-production.azurewebsites.net'
+    API_ENDPOINT: 'https://sskts-api-production.azurewebsites.net'
 };

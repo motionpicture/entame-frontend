@@ -29,7 +29,7 @@ function getCredentials(req, res) {
             }
             const authModel = new auth2_model_1.Auth2Model(req.session.auth);
             const options = {
-                endpoint: process.env.SSKTS_API_ENDPOINT,
+                endpoint: process.env.API_ENDPOINT,
                 auth: authModel.create()
             };
             const accessToken = yield options.auth.getAccessToken();
