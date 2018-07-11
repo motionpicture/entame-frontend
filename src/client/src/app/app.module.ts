@@ -7,7 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { AuthIndexComponent } from './components/auth/auth-index/auth-index.component';
@@ -30,6 +31,7 @@ import { PointCardHeaderComponent } from './components/parts/point-card-header/p
 import { PointCardIndexComponent } from './components/point-card/point-card-index/point-card-index.component';
 import { PointCardTransferCompleteComponent } from './components/point-card/point-card-transfer-complete/point-card-transfer-complete.component';
 import { PointCardTransferInputComponent } from './components/point-card/point-card-transfer-input/point-card-transfer-input.component';
+import { TicketIndexComponent } from './components/ticket/ticket-index/ticket-index.component';
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
 import { SasakiService } from './services/sasaki/sasaki.service';
 import { StorageService } from './services/storage/storage.service';
@@ -59,11 +61,13 @@ import { UtilService } from './services/util/util.service';
         CoinHeaderComponent,
         PointCardHeaderComponent,
         AuthIndexComponent,
-        LoadingComponent
+        LoadingComponent,
+        TicketIndexComponent
     ],
     imports: [
         NgbModule.forRoot(),
         BrowserModule,
+        BrowserAnimationsModule,
         HttpClientModule,
         AppRoutingModule,
         ReactiveFormsModule,

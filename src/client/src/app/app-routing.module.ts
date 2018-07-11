@@ -8,6 +8,7 @@ import { IndexComponent } from './components/index/index.component';
 import * as auth from './routes/auth.route';
 import * as coin from './routes/coin.route';
 import * as pointCard from './routes/point-card.route';
+import * as ticket from './routes/ticket.route';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
         children: [
             { path: '', component: IndexComponent },
             pointCard.route,
-            coin.route
+            coin.route,
+            ticket.route
         ]
     },
     auth.route

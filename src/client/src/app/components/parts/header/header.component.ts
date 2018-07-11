@@ -21,7 +21,8 @@ const pages: IPage[] = [
     { url: '/coin/payment/select', title: 'エンタメコイン入金', prev: '/coin' },
     { url: '/point-card', title: 'ポイント＆カード', prev: '/' },
     { url: '/point-card/transfer/complete', title: 'ポイント移動', prev: '/point-card' },
-    { url: '/point-card/transfer/input', title: 'ポイント移動', prev: '/point-card' }
+    { url: '/point-card/transfer/input', title: 'ポイント移動', prev: '/point-card' },
+    { url: '/ticket', title: 'チケット購入', prev: '/' }
 ];
 
 @Component({
