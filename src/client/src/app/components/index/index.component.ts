@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
+    public isLoading: boolean;
+
     constructor() { }
 
     public ngOnInit() {

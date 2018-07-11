@@ -24,6 +24,7 @@ import { IndexComponent } from './components/index/index.component';
 import { CoinHeaderComponent } from './components/parts/coin-header/coin-header.component';
 import { HeaderMenuComponent } from './components/parts/header-menu/header-menu.component';
 import { HeaderComponent } from './components/parts/header/header.component';
+import { LoadingComponent } from './components/parts/loading/loading.component';
 import { PageComponent } from './components/parts/page/page.component';
 import { PointCardHeaderComponent } from './components/parts/point-card-header/point-card-header.component';
 import { PointCardIndexComponent } from './components/point-card/point-card-index/point-card-index.component';
@@ -57,7 +58,8 @@ import { UtilService } from './services/util/util.service';
         CoinPaymentAccountComponent,
         CoinHeaderComponent,
         PointCardHeaderComponent,
-        AuthIndexComponent
+        AuthIndexComponent,
+        LoadingComponent
     ],
     imports: [
         NgbModule.forRoot(),
