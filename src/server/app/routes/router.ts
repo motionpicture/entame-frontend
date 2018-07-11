@@ -3,6 +3,7 @@
  */
 import * as express from 'express';
 import * as path from 'path';
+import * as assets from '../controllers/assets/assets.controller';
 import * as authorize from '../controllers/authorize/authorize.controller';
 
 export default (app: express.Application) => {
@@ -10,6 +11,8 @@ export default (app: express.Application) => {
         res.locals.NODE_ENV = process.env.NODE_ENV;
         next();
     });
+
+    app.get('/api/assets/getImages', assets.getImages);
 
     app.get('/api/authorize/getCredentials', authorize.getCredentials);
     app.get('/api/authorize/signIn', authorize.signIn);

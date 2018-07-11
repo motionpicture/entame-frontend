@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const path = require("path");
+const assets = require("../controllers/assets/assets.controller");
 const authorize = require("../controllers/authorize/authorize.controller");
 exports.default = (app) => {
     app.use((_req, res, next) => {
         res.locals.NODE_ENV = process.env.NODE_ENV;
         next();
     });
+    app.get('/api/assets/getImages', assets.getImages);
     app.get('/api/authorize/getCredentials', authorize.getCredentials);
     app.get('/api/authorize/signIn', authorize.signIn);
     app.get('/api/authorize/signOut', authorize.signOut);
