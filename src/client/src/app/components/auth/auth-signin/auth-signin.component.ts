@@ -20,11 +20,11 @@ export class AuthSigninComponent implements OnInit {
      */
     public async ngOnInit() {
         try {
-            await this.user.initMember();
+            await this.user.init();
             this.router.navigate(['/']);
         } catch (err) {
             console.error(err);
-            this.router.navigate(['/error', { redirect: '/auth/select' }]);
+            this.router.navigate(['/error', { redirect: '/auth' }]);
         }
 
     }

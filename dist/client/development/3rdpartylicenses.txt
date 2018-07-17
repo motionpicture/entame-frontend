@@ -91,19 +91,15 @@ MIT
 MIT
 MIT
 
+@entamecoin/api-javascript-client@0.0.0-alpha.2
+ISC
+ISC
+
+@entamecoin/factory@0.0.0-alpha.1
+ISC
+ISC
+
 @motionpicture/pecorino-factory@0.0.0
-ISC
-ISC
-
-@motionpicture/sskts-api-abstract-client@3.3.0
-ISC
-ISC
-
-@motionpicture/sskts-api-javascript-client@3.3.0
-ISC
-ISC
-
-@motionpicture/sskts-factory@4.2.0
 ISC
 ISC
 

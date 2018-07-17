@@ -1,4 +1,4 @@
-import * as sasaki from '@motionpicture/sskts-api-nodejs-client';
+import * as entamecoin from '@entamecoin/api-nodejs-client';
 import debug = require('debug');
 const log = debug('entame-frontend:Auth2Model');
 /**
@@ -63,21 +63,21 @@ export class Auth2Model {
         if (session === undefined) {
             session = {};
         }
-        const resourceServerUrl = <string>process.env.RESOURCE_SERVER_URL;
+        // const resourceServerUrl = <string>process.env.RESOURCE_SERVER_URL;
         this.scopes = [
-            'phone',
-            'openid',
-            'email',
-            'aws.cognito.signin.user.admin',
-            'profile',
-            `${resourceServerUrl}/transactions`,
-            `${resourceServerUrl}/events.read-only`,
-            `${resourceServerUrl}/organizations.read-only`,
-            `${resourceServerUrl}/orders.read-only`,
-            `${resourceServerUrl}/places.read-only`,
-            `${resourceServerUrl}/people.contacts`,
-            `${resourceServerUrl}/people.creditCards`,
-            `${resourceServerUrl}/people.ownershipInfos.read-only`
+            // 'phone',
+            // 'openid',
+            // 'email',
+            // 'aws.cognito.signin.user.admin',
+            // 'profile',
+            // `${resourceServerUrl}/transactions`,
+            // `${resourceServerUrl}/events.read-only`,
+            // `${resourceServerUrl}/organizations.read-only`,
+            // `${resourceServerUrl}/orders.read-only`,
+            // `${resourceServerUrl}/places.read-only`,
+            // `${resourceServerUrl}/people.contacts`,
+            // `${resourceServerUrl}/people.creditCards`,
+            // `${resourceServerUrl}/people.ownershipInfos.read-only`
         ];
         this.credentials = session.credentials;
         this.state = Auth2Model.STATE;
@@ -88,10 +88,10 @@ export class Auth2Model {
      * 認証クラス作成
      * @memberof Auth2Model
      * @method create
-     * @returns {sasaki.auth.OAuth2}
+     * @returns {entamecoin.auth.OAuth2}
      */
-    public create(): sasaki.auth.OAuth2 {
-        const auth = new sasaki.auth.OAuth2({
+    public create(): entamecoin.auth.OAuth2 {
+        const auth = new entamecoin.auth.OAuth2({
             domain: (<string>process.env.OAUTH2_SERVER_DOMAIN),
             clientId: (<string>process.env.CLIENT_ID_OAUTH2),
             clientSecret: (<string>process.env.CLIENT_SECRET_OAUTH2),

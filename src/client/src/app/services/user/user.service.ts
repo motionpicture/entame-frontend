@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { factory } from '@motionpicture/sskts-api-javascript-client';
-import { SasakiService } from '../sasaki/sasaki.service';
+import { factory } from '../../../../../../node_modules/@entamecoin/api-javascript-client';
+import { EntamecoinService } from '../entamecoin/entamecoin.service';
 import { SaveType, StorageService } from '../storage/storage.service';
 
 
@@ -21,7 +21,7 @@ export class UserService {
 
     constructor(
         private storage: StorageService,
-        private sasaki: SasakiService
+        private entamecoin: EntamecoinService
     ) {
         this.load();
         this.save();
@@ -68,87 +68,45 @@ export class UserService {
 
     /**
      * 会員初期化
-     * @method initMember
+     * @method init
      */
-    public async initMember() {
+    public async init() {
         this.save();
-        await this.sasaki.getServices();
-        if (this.sasaki.userName === undefined) {
+        await this.entamecoin.getServices();
+        if (this.entamecoin.userName === undefined) {
             throw new Error('userName is undefined');
         }
-        // 連絡先取得
-        const contact = await this.sasaki.person.getContacts({
-            personId: 'me'
-        });
-        if (contact === undefined) {
-            throw new Error('contact is undefined');
-        }
-        this.data.contact = contact;
 
-        try {
-            // クレジットカード検索
-            const creditCards = await this.sasaki.person.findCreditCards({
-                personId: 'me'
-            });
-            this.data.creditCards = creditCards;
-        } catch (err) {
-            console.log(err);
-            this.data.creditCards = [];
-        }
-
-        // 口座検索
-        let accounts = await this.sasaki.person.findAccounts({
-            personId: 'me'
-        });
-        accounts = accounts.filter((account) => {
-            return account.status === factory.pecorino.accountStatusType.Opened;
-        });
-        if (accounts.length === 0) {
-            // 口座開設
-            const account = await this.sasaki.person.openAccount({
-                personId: 'me',
-                name: this.sasaki.userName
-            });
-            this.data.accounts.push(account);
-        } else {
-            this.data.accounts = accounts;
-        }
-
-        const programMembershipOwnershipInfos = await this.sasaki.person.searchOwnershipInfos({
-            ownedBy: 'me',
-            goodType: 'ProgramMembership'
-        });
-
-        this.data.programMembershipOwnershipInfos = programMembershipOwnershipInfos;
+        this.data.userName = this.entamecoin.userName;
 
         this.save();
     }
 
-    /**
-     * 口座情報更新
-     * @method updateAccount
-     */
-    public async updateAccount() {
-        await this.sasaki.getServices();
-        // 口座検索
-        let accounts = await this.sasaki.person.findAccounts({
-            personId: 'me'
-        });
-        accounts = accounts.filter((account) => {
-            return account.status === factory.pecorino.accountStatusType.Opened;
-        });
-        if (accounts.length === 0) {
-            // 口座開設
-            const account = await this.sasaki.person.openAccount({
-                personId: 'me',
-                name: this.getName()
-            });
-            this.data.accounts.push(account);
-        } else {
-            this.data.accounts = accounts;
-        }
-        this.save();
-    }
+    // /**
+    //  * 口座情報更新
+    //  * @method updateAccount
+    //  */
+    // public async updateAccount() {
+    //     await this.entamecoin.getServices();
+    //     // 口座検索
+    //     let accounts = await this.entamecoin.person.findAccounts({
+    //         personId: 'me'
+    //     });
+    //     accounts = accounts.filter((account) => {
+    //         return account.status === factory.pecorino.accountStatusType.Opened;
+    //     });
+    //     if (accounts.length === 0) {
+    //         // 口座開設
+    //         const account = await this.entamecoin.person.openAccount({
+    //             personId: 'me',
+    //             name: this.getName()
+    //         });
+    //         this.data.accounts.push(account);
+    //     } else {
+    //         this.data.accounts = accounts;
+    //     }
+    //     this.save();
+    // }
 
     /**
      * 名前取得
@@ -183,36 +141,36 @@ export class UserService {
         return this.data.accounts[index];
     }
 
-    /**
-     * 基本情報変更
-     * @method updateProfile
-     */
-    public async updateProfile(args: {
-        familyName: string;
-        givenName: string;
-        email: string;
-        telephone: string;
-        postalCode: string;
-    }) {
-        await this.sasaki.getServices();
-        await this.sasaki.person.updateContacts({
-            personId: 'me',
-            contacts: {
-                familyName: args.familyName,
-                givenName: args.givenName,
-                email: args.email,
-                telephone: args.telephone
-            }
-        });
-        const contact = await this.sasaki.person.getContacts({
-            personId: 'me'
-        });
-        if (contact === undefined) {
-            throw new Error('contact is undefined');
-        }
-        this.data.contact = contact;
+    // /**
+    //  * 基本情報変更
+    //  * @method updateProfile
+    //  */
+    // public async updateProfile(args: {
+    //     familyName: string;
+    //     givenName: string;
+    //     email: string;
+    //     telephone: string;
+    //     postalCode: string;
+    // }) {
+    //     await this.entamecoin.getServices();
+    //     await this.entamecoin.person.updateContacts({
+    //         personId: 'me',
+    //         contacts: {
+    //             familyName: args.familyName,
+    //             givenName: args.givenName,
+    //             email: args.email,
+    //             telephone: args.telephone
+    //         }
+    //     });
+    //     const contact = await this.entamecoin.person.getContacts({
+    //         personId: 'me'
+    //     });
+    //     if (contact === undefined) {
+    //         throw new Error('contact is undefined');
+    //     }
+    //     this.data.contact = contact;
 
-        this.save();
-    }
+    //     this.save();
+    // }
 
 }

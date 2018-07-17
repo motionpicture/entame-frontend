@@ -40,7 +40,9 @@ export class AppComponent implements OnInit {
      */
     public async ngOnInit() {
         this.isLoading = true;
-        await this.util.imageLoader();
+        await this.util.imageLoader().catch((err) => {
+            console.error(err);
+        });
         await this.util.sleep(2000);
         this.isLoading = false;
     }

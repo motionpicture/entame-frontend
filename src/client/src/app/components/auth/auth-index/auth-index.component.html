@@ -7,10 +7,15 @@
         <div class="text-center mb-3">
             <strong>ログイン</strong>
         </div>
-        <div class="text-center">
-            <button routerLink="/" type="submit" class="btn btn-primary w-50 small-text">ログイン</button>
+        <div class="text-center mb-2">
+            <button type="submit" class="btn btn-primary py-2 py-2 w-50 small-text" (click)="signIn()">ログイン</button>
         </div>
+        <p class="text-center">
+            新規会員は
+            <u class="small-text text-primary" (click)="signUp()">こちら</u>
+            から
+        </p>
     </div>
 </div>
 
-<app-loading [show]="isLoading"></app-loading>
+<app-loading [show]=" isLoading "></app-loading>

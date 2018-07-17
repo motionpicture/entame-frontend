@@ -9,13 +9,14 @@ import * as auth from './routes/auth.route';
 import * as coin from './routes/coin.route';
 import * as pointCard from './routes/point-card.route';
 import * as ticket from './routes/ticket.route';
+import { AuthGuardService } from './services/auth-guard/auth-guard.service';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/', pathMatch: 'full' },
     {
         path: '',
         component: BaseComponent,
-        canActivate: [],
+        canActivate: [AuthGuardService],
         children: [
             { path: '', component: IndexComponent },
             pointCard.route,

@@ -33,7 +33,7 @@ import { PointCardTransferCompleteComponent } from './components/point-card/poin
 import { PointCardTransferInputComponent } from './components/point-card/point-card-transfer-input/point-card-transfer-input.component';
 import { TicketIndexComponent } from './components/ticket/ticket-index/ticket-index.component';
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
-import { SasakiService } from './services/sasaki/sasaki.service';
+import { EntamecoinService } from './services/entamecoin/entamecoin.service';
 import { StorageService } from './services/storage/storage.service';
 import { UserService } from './services/user/user.service';
 import { UtilService } from './services/util/util.service';
@@ -77,7 +77,7 @@ import { UtilService } from './services/util/util.service';
         AuthGuardService,
         StorageService,
         UserService,
-        SasakiService,
+        EntamecoinService,
         UtilService
     ],
     bootstrap: [AppComponent]
