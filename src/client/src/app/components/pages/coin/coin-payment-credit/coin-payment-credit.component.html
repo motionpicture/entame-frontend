@@ -1,0 +1,65 @@
+<app-page>
+    <app-coin-header class="mb-4"></app-coin-header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <form action="" method="post">
+                    <div class="text-center mb-4">
+                        <strong>入金額入力</strong>
+                    </div>
+                    <div class="form-group mb-4">
+                        <input type="text" class="form-control rounded-0" name="" id="" placeholder="">
+                    </div>
+                    <!-- <div class="form-group text-center px-2 bg-light">
+                        <img class="w-100" src="/assets/images/credit_card.png">
+                    </div> -->
+                    <div class="text-center mb-4">
+                        <strong>クレジットカード情報入力</strong>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="control-label">クレジットカード番号</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-0" name="" id="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="" class="control-label">有効期限</label>
+                        <div class="form-inline">
+                            <select class="form-control w-auto rounded-0" id="" name="">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            <span class="mx-2">月</span>
+                            <select class="form-control w-auto rounded-0" id="" name="">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            <span class="mx-2">年</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="control-label">セキュリティーコード</label>
+                        <input type="text" class="form-control rounded-0" name="" id="" placeholder="">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="" class="control-label">クレジットカード名義人</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-0" name="" id="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary py-2 w-50 small-text" routerLink="/coin/payment/complete">入金</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</app-page>
+
+<app-loading [show]="isLoading"></app-loading>

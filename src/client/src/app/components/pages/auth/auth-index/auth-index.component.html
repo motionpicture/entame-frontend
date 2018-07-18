@@ -1,0 +1,21 @@
+<div class="base d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-center mb-3">
+            <img src="/assets/images/logo.png" width="20" height="20" class="mr-1" alt="">
+            <span class="large-x-text">Entame Coin</span>
+        </div>
+        <div class="text-center mb-3">
+            <strong>ログイン</strong>
+        </div>
+        <div class="text-center mb-2">
+            <button type="submit" class="btn btn-primary py-2 py-2 w-50 small-text" (click)="signIn()">ログイン</button>
+        </div>
+        <p class="text-center">
+            新規会員は
+            <u class="small-text text-primary" (click)="signUp()">こちら</u>
+            から
+        </p>
+    </div>
+</div>
+
+<app-loading [show]=" isLoading "></app-loading>

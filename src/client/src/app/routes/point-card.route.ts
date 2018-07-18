@@ -1,7 +1,7 @@
 // tslint:disable:max-line-length
-import { PointCardIndexComponent } from '../components/point-card/point-card-index/point-card-index.component';
-import { PointCardTransferCompleteComponent } from '../components/point-card/point-card-transfer-complete/point-card-transfer-complete.component';
-import { PointCardTransferInputComponent } from '../components/point-card/point-card-transfer-input/point-card-transfer-input.component';
+import { PointCardIndexComponent } from '../components/pages/point-card/point-card-index/point-card-index.component';
+import { PointCardTransferCompleteComponent } from '../components/pages/point-card/point-card-transfer-complete/point-card-transfer-complete.component';
+import { PointCardTransferInputComponent } from '../components/pages/point-card/point-card-transfer-input/point-card-transfer-input.component';
 
 /**
  * ポイント＆カードルーティング

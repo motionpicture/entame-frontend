@@ -21,6 +21,7 @@ export class EntamecoinService {
         try {
             const option = await this.createOption();
             this.person = new entamecoin.service.Person(option);
+            console.log(this);
         } catch (err) {
             console.log(err);
 

@@ -6,10 +6,7 @@ import { SaveType, StorageService } from '../storage/storage.service';
 
 export interface IData {
     userName?: string;
-    contact?: factory.person.IContact;
-    creditCards: factory.paymentMethod.paymentCard.creditCard.ICheckedCard[];
-    accounts: factory.pecorino.account.IAccount[];
-    programMembershipOwnershipInfos: factory.ownershipInfo.IOwnershipInfo<'ProgramMembership'>[];
+    coinAccounts: factory.pecorino.account.IAccount[];
 }
 
 const STORAGE_KEY = 'user';
@@ -35,9 +32,7 @@ export class UserService {
         const data: IData | null = this.storage.load(STORAGE_KEY, SaveType.Local);
         if (data === null) {
             this.data = {
-                creditCards: [],
-                accounts: [],
-                programMembershipOwnershipInfos: []
+                coinAccounts: []
             };
 
             return;
@@ -59,9 +54,7 @@ export class UserService {
      */
     public reset() {
         this.data = {
-            creditCards: [],
-            accounts: [],
-            programMembershipOwnershipInfos: []
+            coinAccounts: []
         };
         this.save();
     }
@@ -71,13 +64,26 @@ export class UserService {
      * @method init
      */
     public async init() {
-        this.save();
+        this.reset();
         await this.entamecoin.getServices();
         if (this.entamecoin.userName === undefined) {
             throw new Error('userName is undefined');
         }
 
         this.data.userName = this.entamecoin.userName;
+        const coinAccounts = await this.entamecoin.person.searchCoinAccounts({
+            personId: 'me'
+        });
+        this.data.coinAccounts = coinAccounts.filter((account) => {
+            return (account.status === factory.pecorino.accountStatusType.Opened);
+        });
+        if (this.data.coinAccounts.length === 0) {
+            const coinAccount = await this.entamecoin.person.openCoinAccount({
+                personId: 'me',
+                name: this.data.userName
+            });
+            this.data.coinAccounts.push(coinAccount);
+        }
 
         this.save();
     }
@@ -108,38 +114,38 @@ export class UserService {
     //     this.save();
     // }
 
-    /**
-     * 名前取得
-     * @method getName
-     */
-    public getName() {
-        if (this.data.contact === undefined) {
-            return '';
-        }
-        return `${this.data.contact.familyName} ${this.data.contact.givenName}`;
-    }
+    // /**
+    //  * 名前取得
+    //  * @method getName
+    //  */
+    // public getName() {
+    //     if (this.data.contact === undefined) {
+    //         return '';
+    //     }
+    //     return `${this.data.contact.familyName} ${this.data.contact.givenName}`;
+    // }
 
-    /**
-     * 電話番号取得（ハイフンなし）
-     * @method getTelephone
-     */
-    public getTelephone() {
-        if (this.data.contact === undefined) {
-            return '';
-        }
-        return this.data.contact.telephone.replace(/\-/g, '');
-    }
+    // /**
+    //  * 電話番号取得（ハイフンなし）
+    //  * @method getTelephone
+    //  */
+    // public getTelephone() {
+    //     if (this.data.contact === undefined) {
+    //         return '';
+    //     }
+    //     return this.data.contact.telephone.replace(/\-/g, '');
+    // }
 
-    /**
-     * 口座情報取得
-     * @method getAccount
-     */
-    public getAccount(index: number) {
-        if (this.data.accounts.length === 0) {
-            return undefined;
-        }
-        return this.data.accounts[index];
-    }
+    // /**
+    //  * 口座情報取得
+    //  * @method getAccount
+    //  */
+    // public getAccount(index: number) {
+    //     if (this.data.accounts.length === 0) {
+    //         return undefined;
+    //     }
+    //     return this.data.accounts[index];
+    // }
 
     // /**
     //  * 基本情報変更

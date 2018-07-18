@@ -1,8 +1,8 @@
-import { CoinIndexComponent } from '../components/coin/coin-index/coin-index.component';
-import { CoinPaymentAccountComponent } from '../components/coin/coin-payment-account/coin-payment-account.component';
-import { CoinPaymentCompleteComponent } from '../components/coin/coin-payment-complete/coin-payment-complete.component';
-import { CoinPaymentCreditComponent } from '../components/coin/coin-payment-credit/coin-payment-credit.component';
-import { CoinPaymentSelectComponent } from '../components/coin/coin-payment-select/coin-payment-select.component';
+import { CoinIndexComponent } from '../components/pages/coin/coin-index/coin-index.component';
+import { CoinPaymentAccountComponent } from '../components/pages/coin/coin-payment-account/coin-payment-account.component';
+import { CoinPaymentCompleteComponent } from '../components/pages/coin/coin-payment-complete/coin-payment-complete.component';
+import { CoinPaymentCreditComponent } from '../components/pages/coin/coin-payment-credit/coin-payment-credit.component';
+import { CoinPaymentSelectComponent } from '../components/pages/coin/coin-payment-select/coin-payment-select.component';
 
 /**
  * コインルーティング

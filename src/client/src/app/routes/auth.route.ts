@@ -1,6 +1,6 @@
-import { AuthIndexComponent } from '../components/auth/auth-index/auth-index.component';
-import { AuthSigninComponent } from '../components/auth/auth-signin/auth-signin.component';
-import { AuthSignoutComponent } from '../components/auth/auth-signout/auth-signout.component';
+import { AuthIndexComponent } from '../components/pages/auth/auth-index/auth-index.component';
+import { AuthSigninComponent } from '../components/pages/auth/auth-signin/auth-signin.component';
+import { AuthSignoutComponent } from '../components/pages/auth/auth-signout/auth-signout.component';
 
 /**
  * 認証ルーティング

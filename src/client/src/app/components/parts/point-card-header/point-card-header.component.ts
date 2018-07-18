@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PointCardHeaderComponent implements OnInit {
 
-    constructor() { }
+    public point: number;
+    constructor(
+    ) { }
 
     public ngOnInit() {
+        this.point = 0;
     }
-
 }

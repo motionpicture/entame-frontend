@@ -1,4 +1,4 @@
-import { TicketIndexComponent } from '../components/ticket/ticket-index/ticket-index.component';
+import { TicketIndexComponent } from '../components/pages/ticket/ticket-index/ticket-index.component';
 
 /**
  * コインルーティング

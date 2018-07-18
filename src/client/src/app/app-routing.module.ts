@@ -3,8 +3,9 @@
  */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BaseComponent } from './components/base/base.component';
-import { IndexComponent } from './components/index/index.component';
+import { BaseComponent } from './components/pages/base/base.component';
+import { ErrorComponent } from './components/pages/error/error.component';
+import { IndexComponent } from './components/pages/index/index.component';
 import * as auth from './routes/auth.route';
 import * as coin from './routes/coin.route';
 import * as pointCard from './routes/point-card.route';
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
             ticket.route
         ]
     },
-    auth.route
+    auth.route,
+    { path: 'error', component: ErrorComponent },
 ];
 
 // tslint:disable-next-line:no-stateless-class
