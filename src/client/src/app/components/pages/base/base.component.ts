@@ -21,5 +21,4 @@ export class BaseComponent implements OnInit {
      */
     public async ngOnInit() {
     }
-
 }

@@ -35,7 +35,7 @@ import { LoadingComponent } from './components/parts/loading/loading.component';
 import { PageComponent } from './components/parts/page/page.component';
 import { PointCardHeaderComponent } from './components/parts/point-card-header/point-card-header.component';
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
-import { EntamecoinService } from './services/entamecoin/entamecoin.service';
+import { MocoinService } from './services/mocoin/mocoin.service';
 import { StorageService } from './services/storage/storage.service';
 import { UserService } from './services/user/user.service';
 import { UtilService } from './services/util/util.service';
@@ -81,7 +81,7 @@ import { UtilService } from './services/util/util.service';
         AuthGuardService,
         StorageService,
         UserService,
-        EntamecoinService,
+        MocoinService,
         UtilService
     ],
     bootstrap: [AppComponent]

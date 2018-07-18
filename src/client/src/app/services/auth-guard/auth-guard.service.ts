@@ -3,14 +3,14 @@
  */
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { EntamecoinService } from '../entamecoin/entamecoin.service';
+import { MocoinService } from '../mocoin/mocoin.service';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {
 
     constructor(
         private router: Router,
-        private entamecoin: EntamecoinService
+        private mocoin: MocoinService
     ) { }
 
     /**
@@ -20,7 +20,7 @@ export class AuthGuardService implements CanActivate {
      */
     public async canActivate(): Promise<boolean> {
         try {
-            await this.entamecoin.authorize();
+            await this.mocoin.authorize();
 
             return true;
         } catch (err) {

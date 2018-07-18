@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import * as entamecoin from '@entamecoin/api-javascript-client';
+import * as mocoin from '@mocoin/api-javascript-client';
 import { environment } from '../../../environments/environment';
 
 @Injectable()
-export class EntamecoinService {
+export class MocoinService {
 
-    public auth: entamecoin.IImplicitGrantClient;
+    public auth: mocoin.IImplicitGrantClient;
     public userName?: string;
-    public person: entamecoin.service.Person;
+    public person: mocoin.service.Person;
 
     constructor(
         private http: HttpClient
@@ -20,7 +20,7 @@ export class EntamecoinService {
     public async getServices(): Promise<void> {
         try {
             const option = await this.createOption();
-            this.person = new entamecoin.service.Person(option);
+            this.person = new mocoin.service.Person(option);
             console.log(this);
         } catch (err) {
             console.log(err);
@@ -101,7 +101,7 @@ export class EntamecoinService {
             nonce: null,
             tokenIssuer: ''
         };
-        this.auth = entamecoin.createAuthInstance(option);
+        this.auth = mocoin.createAuthInstance(option);
         this.auth.setCredentials(result.credentials);
         this.userName = result.userName;
     }

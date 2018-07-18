@@ -1,4 +1,4 @@
-import * as entamecoin from '@entamecoin/api-nodejs-client';
+import * as mocoin from '@mocoin/api-nodejs-client';
 import debug = require('debug');
 const log = debug('entame-frontend:Auth2Model');
 /**
@@ -88,10 +88,10 @@ export class Auth2Model {
      * 認証クラス作成
      * @memberof Auth2Model
      * @method create
-     * @returns {entamecoin.auth.OAuth2}
+     * @returns {mocoin.auth.OAuth2}
      */
-    public create(): entamecoin.auth.OAuth2 {
-        const auth = new entamecoin.auth.OAuth2({
+    public create(): mocoin.auth.OAuth2 {
+        const auth = new mocoin.auth.OAuth2({
             domain: (<string>process.env.OAUTH2_SERVER_DOMAIN),
             clientId: (<string>process.env.CLIENT_ID_OAUTH2),
             clientSecret: (<string>process.env.CLIENT_SECRET_OAUTH2),

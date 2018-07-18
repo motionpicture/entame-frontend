@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EntamecoinService } from '../../../../services/entamecoin/entamecoin.service';
+import { MocoinService } from '../../../../services/mocoin/mocoin.service';
 
 @Component({
     selector: 'app-auth-index',
@@ -11,7 +11,7 @@ export class AuthIndexComponent implements OnInit {
     public isLoading: boolean;
 
     constructor(
-        private entamecoin: EntamecoinService
+        private mocoin: MocoinService
     ) { }
 
     public ngOnInit() {
@@ -20,7 +20,7 @@ export class AuthIndexComponent implements OnInit {
     public async signIn() {
         this.isLoading = true;
         try {
-            await this.entamecoin.signIn();
+            await this.mocoin.signIn();
         } catch (error) {
             console.error(error);
             this.isLoading = false;
@@ -30,7 +30,7 @@ export class AuthIndexComponent implements OnInit {
     public async signUp() {
         this.isLoading = true;
         try {
-            await this.entamecoin.signUp();
+            await this.mocoin.signUp();
         } catch (error) {
             console.error(error);
             this.isLoading = false;

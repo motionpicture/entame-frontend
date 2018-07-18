@@ -106,7 +106,11 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 
 END OF TERMS AND CONDITIONS
 
-@entamecoin/api-javascript-client@0.0.0-alpha.2
+@mocoin/api-javascript-client@0.0.0-alpha.0
+ISC
+ISC
+
+@mocoin/api-abstract-client@0.0.0-alpha.0
 ISC
 ISC
 
@@ -376,7 +380,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@entamecoin/factory@0.0.0-alpha.1
+@mocoin/factory@0.0.0-alpha.0
 ISC
 ISC
 

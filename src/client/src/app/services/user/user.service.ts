@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { factory } from '../../../../../../node_modules/@entamecoin/api-javascript-client';
-import { EntamecoinService } from '../entamecoin/entamecoin.service';
+import { factory } from '@mocoin/api-javascript-client';
+import { environment } from '../../../environments/environment';
+import { MocoinService } from '../mocoin/mocoin.service';
 import { SaveType, StorageService } from '../storage/storage.service';
 
 
 export interface IData {
     userName?: string;
     coinAccounts: factory.pecorino.account.IAccount[];
+    paymentMethods: factory.ownershipInfo.IPaymentMethod<factory.paymentMethodType>[];
 }
 
 const STORAGE_KEY = 'user';
@@ -18,7 +20,7 @@ export class UserService {
 
     constructor(
         private storage: StorageService,
-        private entamecoin: EntamecoinService
+        private mocoin: MocoinService
     ) {
         this.load();
         this.save();
@@ -32,7 +34,8 @@ export class UserService {
         const data: IData | null = this.storage.load(STORAGE_KEY, SaveType.Local);
         if (data === null) {
             this.data = {
-                coinAccounts: []
+                coinAccounts: [],
+                paymentMethods: []
             };
 
             return;
@@ -54,7 +57,8 @@ export class UserService {
      */
     public reset() {
         this.data = {
-            coinAccounts: []
+            coinAccounts: [],
+            paymentMethods: []
         };
         this.save();
     }
@@ -65,24 +69,42 @@ export class UserService {
      */
     public async init() {
         this.reset();
-        await this.entamecoin.getServices();
-        if (this.entamecoin.userName === undefined) {
+        await this.mocoin.getServices();
+        if (this.mocoin.userName === undefined) {
             throw new Error('userName is undefined');
         }
 
-        this.data.userName = this.entamecoin.userName;
-        const coinAccounts = await this.entamecoin.person.searchCoinAccounts({
+        // ユーザーネーム取得
+        this.data.userName = this.mocoin.userName;
+
+        // コイン口座取得
+        const coinAccounts = await this.mocoin.person.searchCoinAccounts({
             personId: 'me'
         });
         this.data.coinAccounts = coinAccounts.filter((account) => {
             return (account.status === factory.pecorino.accountStatusType.Opened);
         });
         if (this.data.coinAccounts.length === 0) {
-            const coinAccount = await this.entamecoin.person.openCoinAccount({
+            const coinAccount = await this.mocoin.person.openCoinAccount({
                 personId: 'me',
                 name: this.data.userName
             });
             this.data.coinAccounts.push(coinAccount);
+        }
+
+        // 決済方法取得
+        this.data.paymentMethods = await this.mocoin.person.searchPaymentMethods({
+            personId: 'me'
+        });
+        const tmpAccount = this.data.paymentMethods.find((paymentMethod) => {
+            return (paymentMethod.accountNumber === environment.TMP_BANK_ACCOUNT_NUMBER);
+        });
+        if (tmpAccount === undefined) {
+            await this.mocoin.person.addPaymentMethod({
+                personId: 'me',
+                accountNumber: environment.TMP_BANK_ACCOUNT_NUMBER,
+                paymentMethodType: factory.paymentMethodType.BankAccount
+            });
         }
 
         this.save();
@@ -93,9 +115,9 @@ export class UserService {
     //  * @method updateAccount
     //  */
     // public async updateAccount() {
-    //     await this.entamecoin.getServices();
+    //     await this.mocoin.getServices();
     //     // 口座検索
-    //     let accounts = await this.entamecoin.person.findAccounts({
+    //     let accounts = await this.mocoin.person.findAccounts({
     //         personId: 'me'
     //     });
     //     accounts = accounts.filter((account) => {
@@ -103,7 +125,7 @@ export class UserService {
     //     });
     //     if (accounts.length === 0) {
     //         // 口座開設
-    //         const account = await this.entamecoin.person.openAccount({
+    //         const account = await this.mocoin.person.openAccount({
     //             personId: 'me',
     //             name: this.getName()
     //         });
@@ -158,8 +180,8 @@ export class UserService {
     //     telephone: string;
     //     postalCode: string;
     // }) {
-    //     await this.entamecoin.getServices();
-    //     await this.entamecoin.person.updateContacts({
+    //     await this.mocoin.getServices();
+    //     await this.mocoin.person.updateContacts({
     //         personId: 'me',
     //         contacts: {
     //             familyName: args.familyName,
@@ -168,7 +190,7 @@ export class UserService {
     //             telephone: args.telephone
     //         }
     //     });
-    //     const contact = await this.entamecoin.person.getContacts({
+    //     const contact = await this.mocoin.person.getContacts({
     //         personId: 'me'
     //     });
     //     if (contact === undefined) {

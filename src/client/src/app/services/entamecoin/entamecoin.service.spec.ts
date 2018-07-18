@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { EntamecoinService } from './entamecoin.service';
+import { MocoinService } from './mocoin.service';
 
-describe('EntamecoinService', () => {
+describe('MocoinService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [EntamecoinService]
+      providers: [MocoinService]
     });
   });
 
-  it('should be created', inject([EntamecoinService], (service: EntamecoinService) => {
+  it('should be created', inject([MocoinService], (service: MocoinService) => {
     expect(service).toBeTruthy();
   }));
 });

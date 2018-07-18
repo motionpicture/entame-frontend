@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { EntamecoinService } from '../../../services/entamecoin/entamecoin.service';
+import { MocoinService } from '../../../services/mocoin/mocoin.service';
 
 @Component({
     selector: 'app-header-menu',
@@ -10,7 +10,7 @@ export class HeaderMenuComponent implements OnInit {
     @Input() public isOpen: boolean;
     @Output() public close: EventEmitter<{}> = new EventEmitter();
     constructor(
-        private entamecoin: EntamecoinService
+        private mocoin: MocoinService
     ) { }
 
     public ngOnInit() {
@@ -18,7 +18,7 @@ export class HeaderMenuComponent implements OnInit {
 
     public async signOut() {
         this.close.emit();
-        await this.entamecoin.signOut();
+        await this.mocoin.signOut();
     }
 
 }

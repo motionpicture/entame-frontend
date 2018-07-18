@@ -91,11 +91,15 @@ MIT
 MIT
 MIT
 
-@entamecoin/api-javascript-client@0.0.0-alpha.2
+@mocoin/api-abstract-client@0.0.0-alpha.0
 ISC
 ISC
 
-@entamecoin/factory@0.0.0-alpha.1
+@mocoin/api-javascript-client@0.0.0-alpha.0
+ISC
+ISC
+
+@mocoin/factory@0.0.0-alpha.0
 ISC
 ISC
 

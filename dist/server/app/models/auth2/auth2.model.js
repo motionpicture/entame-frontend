@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const entamecoin = require("@entamecoin/api-nodejs-client");
+const mocoin = require("@mocoin/api-nodejs-client");
 const debug = require("debug");
 const log = debug('entame-frontend:Auth2Model');
 /**
@@ -41,10 +41,10 @@ class Auth2Model {
      * 認証クラス作成
      * @memberof Auth2Model
      * @method create
-     * @returns {entamecoin.auth.OAuth2}
+     * @returns {mocoin.auth.OAuth2}
      */
     create() {
-        const auth = new entamecoin.auth.OAuth2({
+        const auth = new mocoin.auth.OAuth2({
             domain: process.env.OAUTH2_SERVER_DOMAIN,
             clientId: process.env.CLIENT_ID_OAUTH2,
             clientSecret: process.env.CLIENT_SECRET_OAUTH2,
