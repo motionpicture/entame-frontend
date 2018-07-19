@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { factory } from '@mocoin/api-javascript-client';
-import { MocoinService } from '../../../../services/mocoin/mocoin.service';
+import { CoinService } from '../../../../services/coin/coin.service';
 import { UserService } from '../../../../services/user/user.service';
 
 @Component({
@@ -17,24 +17,22 @@ export class CoinIndexComponent implements OnInit {
     constructor(
         private router: Router,
         private user: UserService,
-        private mocoin: MocoinService
+        private coin: CoinService
     ) { }
 
     public async ngOnInit() {
         this.isLoading = true;
         try {
-            await this.mocoin.getServices();
             this.coinAccountMoneyTransferActions =
-                await this.mocoin.person.searchCoinAccountMoneyTransferActions({
-                    personId: 'me',
-                    accountNumber: this.user.data.coinAccounts[0].accountNumber
+                await this.coin.searchCoinAccountMoneyTransferActions({
+                    coinAccount: this.user.data.coinAccounts[0]
                 });
-            this.isLoading = false;
             console.log(this.coinAccountMoneyTransferActions);
         } catch (err) {
             console.error(err);
             this.router.navigate(['/error']);
         }
+        this.isLoading = false;
 
     }
 

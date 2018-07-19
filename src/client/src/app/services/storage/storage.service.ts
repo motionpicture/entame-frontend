@@ -15,7 +15,9 @@ export enum SaveType {
     Local = 1
 }
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class StorageService {
 
     constructor() {

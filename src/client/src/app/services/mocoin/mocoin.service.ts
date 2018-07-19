@@ -3,12 +3,17 @@ import { Injectable } from '@angular/core';
 import * as mocoin from '@mocoin/api-javascript-client';
 import { environment } from '../../../environments/environment';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class MocoinService {
 
     public auth: mocoin.IImplicitGrantClient;
     public userName?: string;
     public person: mocoin.service.Person;
+    public transaction: {
+        transferCoin: mocoin.service.transaction.TransferCoin;
+    };
 
     constructor(
         private http: HttpClient
@@ -21,6 +26,9 @@ export class MocoinService {
         try {
             const option = await this.createOption();
             this.person = new mocoin.service.Person(option);
+            this.transaction = {
+                transferCoin: new mocoin.service.transaction.TransferCoin(option)
+            };
             console.log(this);
         } catch (err) {
             console.log(err);

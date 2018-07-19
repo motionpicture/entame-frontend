@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { factory } from '@mocoin/api-javascript-client';
+import { CoinService } from '../../../../services/coin/coin.service';
 
 @Component({
     selector: 'app-coin-payment-complete',
@@ -8,10 +11,20 @@ import { Component, OnInit } from '@angular/core';
 export class CoinPaymentCompleteComponent implements OnInit {
 
     public isLoading: boolean;
+    public transaction: factory.transaction.transferCoin.ITransaction;
 
-    constructor() { }
+    constructor(
+        private router: Router,
+        private coin: CoinService
+    ) { }
 
     public ngOnInit() {
+        if (this.coin.data.transaction === undefined
+        || this.coin.data.transaction.typeOf !== factory.transactionType.TransferCoin) {
+            this.router.navigate(['/error']);
+            return;
+        }
+        this.transaction = this.coin.data.transaction;
     }
 
 }

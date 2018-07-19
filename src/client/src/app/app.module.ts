@@ -32,13 +32,9 @@ import { HeaderMenuComponent } from './components/parts/header-menu/header-menu.
 import { HeaderComponent } from './components/parts/header/header.component';
 import { IndexHeaderComponent } from './components/parts/index-header/index-header.component';
 import { LoadingComponent } from './components/parts/loading/loading.component';
+import { ModalComponent } from './components/parts/modal/modal.component';
 import { PageComponent } from './components/parts/page/page.component';
 import { PointCardHeaderComponent } from './components/parts/point-card-header/point-card-header.component';
-import { AuthGuardService } from './services/auth-guard/auth-guard.service';
-import { MocoinService } from './services/mocoin/mocoin.service';
-import { StorageService } from './services/storage/storage.service';
-import { UserService } from './services/user/user.service';
-import { UtilService } from './services/util/util.service';
 
 // tslint:disable-next-line:no-stateless-class
 @NgModule({
@@ -66,7 +62,11 @@ import { UtilService } from './services/util/util.service';
         LoadingComponent,
         TicketIndexComponent,
         ErrorComponent,
-        IndexHeaderComponent
+        IndexHeaderComponent,
+        ModalComponent
+    ],
+    entryComponents: [
+        ModalComponent
     ],
     imports: [
         NgbModule.forRoot(),
@@ -78,11 +78,6 @@ import { UtilService } from './services/util/util.service';
         FormsModule
     ],
     providers: [
-        AuthGuardService,
-        StorageService,
-        UserService,
-        MocoinService,
-        UtilService
     ],
     bootstrap: [AppComponent]
 })

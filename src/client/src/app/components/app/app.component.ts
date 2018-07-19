@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
         await this.util.imageLoader().catch((err) => {
             console.error(err);
         });
-        await this.util.sleep(2000);
+        await this.util.sleep(1000);
         this.isLoading = false;
     }
 }

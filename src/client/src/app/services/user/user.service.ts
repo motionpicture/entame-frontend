@@ -4,16 +4,17 @@ import { environment } from '../../../environments/environment';
 import { MocoinService } from '../mocoin/mocoin.service';
 import { SaveType, StorageService } from '../storage/storage.service';
 
-
 export interface IData {
-    userName?: string;
+    userName: string;
     coinAccounts: factory.pecorino.account.IAccount[];
     paymentMethods: factory.ownershipInfo.IPaymentMethod<factory.paymentMethodType>[];
 }
 
 const STORAGE_KEY = 'user';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class UserService {
 
     public data: IData;
@@ -34,6 +35,7 @@ export class UserService {
         const data: IData | null = this.storage.load(STORAGE_KEY, SaveType.Local);
         if (data === null) {
             this.data = {
+                userName: '',
                 coinAccounts: [],
                 paymentMethods: []
             };
@@ -57,6 +59,7 @@ export class UserService {
      */
     public reset() {
         this.data = {
+            userName: '',
             coinAccounts: [],
             paymentMethods: []
         };
