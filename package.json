@@ -23,7 +23,8 @@
     "build": "npm run build-server && npm run build-client",
     "preversion": "npm run build",
     "version": "git add -A",
-    "postversion": "git push origin --tags"
+    "postversion": "git push origin --tags",
+    "update-mocoin": "npm install  @mocoin/api-nodejs-client@next @mocoin/api-javascript-client@next"
   },
   "private": true,
   "dependencies": {
