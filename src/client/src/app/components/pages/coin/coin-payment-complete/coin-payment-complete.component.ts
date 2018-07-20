@@ -18,7 +18,7 @@ export class CoinPaymentCompleteComponent implements OnInit {
         private coin: CoinService
     ) { }
 
-    public ngOnInit() {
+    public async ngOnInit() {
         if (this.coin.data.transaction === undefined
         || this.coin.data.transaction.typeOf !== factory.transactionType.TransferCoin) {
             this.router.navigate(['/error']);

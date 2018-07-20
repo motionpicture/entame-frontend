@@ -10,8 +10,7 @@ export class IndexComponent implements OnInit {
 
     constructor() { }
 
-    public ngOnInit() {
-        // this.isLoading = true;
+    public async ngOnInit() {
     }
 
 

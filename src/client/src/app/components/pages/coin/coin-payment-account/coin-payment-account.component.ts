@@ -58,14 +58,19 @@ export class CoinPaymentAccountComponent implements OnInit {
             return;
         }
         this.isLoading = true;
+        const amount: number = this.form.controls.amount.value;
         try {
             // 入金処理
             await this.coin.transferCoinFromBank({
-                amount: this.form.controls.amount.value,
+                amount: amount,
                 userName: this.user.data.userName,
                 coinAccount: this.user.data.coinAccounts[0],
                 paymentMethod: this.selectPaymentMethod
             });
+            // ユーザー情報更新
+            this.user.data.coinAccounts[0].availableBalance += amount;
+            this.user.data.coinAccounts[0].balance += amount;
+            this.user.save();
             this.router.navigate(['/coin/payment/complete']);
         } catch (err) {
             console.error(err);
