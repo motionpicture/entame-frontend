@@ -91,15 +91,15 @@ MIT
 MIT
 MIT
 
-@mocoin/api-abstract-client@0.0.0-alpha.0
+@mocoin/api-abstract-client@0.0.0-alpha.5
 ISC
 ISC
 
-@mocoin/api-javascript-client@0.0.0-alpha.0
+@mocoin/api-javascript-client@0.0.0-alpha.4
 ISC
 ISC
 
-@mocoin/factory@0.0.0-alpha.0
+@mocoin/factory@0.0.0-alpha.7
 ISC
 ISC
 

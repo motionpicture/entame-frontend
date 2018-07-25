@@ -5,7 +5,8 @@ import { MocoinService } from '../mocoin/mocoin.service';
 import { SaveType, StorageService } from '../storage/storage.service';
 
 export interface IData {
-    transaction?: factory.transaction.transferCoin.ITransaction;
+    transaction?: factory.transaction.ITokenizedTransaction;
+    amount: number;
 }
 
 const STORAGE_KEY = 'coin';
@@ -32,7 +33,9 @@ export class CoinService {
     public load() {
         const data: IData | null = this.storage.load(STORAGE_KEY, SaveType.Session);
         if (data === null) {
-            this.data = {};
+            this.data = {
+                amount: 0
+            };
 
             return;
         }
@@ -52,7 +55,9 @@ export class CoinService {
      * @method reset
      */
     public reset() {
-        this.data = {};
+        this.data = {
+            amount: 0
+        };
         this.save();
     }
 
@@ -60,7 +65,7 @@ export class CoinService {
      * 銀行から入金
      * @param paymentMethod
      */
-    public async transferCoinFromBank(args: {
+    public async buyCoin(args: {
         amount: number,
         userName: string,
         coinAccount: factory.pecorino.account.IAccount,
@@ -68,7 +73,7 @@ export class CoinService {
     }) {
         await this.mocoin.getServices();
         this.reset();
-        this.data.transaction = await this.mocoin.transaction.transferCoin.start({
+        this.data.transaction = await this.mocoin.transaction.buyCoin.start({
             expires: moment().add(30, 'minutes').toDate(),
             agent: {
                 typeOf: factory.personType.Person,
@@ -93,9 +98,10 @@ export class CoinService {
         // await this.mocoin.transaction.transferCoin.cancel({ transactionId: transaction.id });
         // console.log('取引を中止しました。');
 
-        await this.mocoin.transaction.transferCoin.confirm({
-            transactionId: this.data.transaction.id
+        await this.mocoin.transaction.buyCoin.confirm({
+            token: this.data.transaction.token
         });
+        this.data.amount = args.amount;
         this.save();
     }
 

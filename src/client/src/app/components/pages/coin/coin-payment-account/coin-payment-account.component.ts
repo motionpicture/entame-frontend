@@ -61,7 +61,7 @@ export class CoinPaymentAccountComponent implements OnInit {
         const amount: number = this.form.controls.amount.value;
         try {
             // 入金処理
-            await this.coin.transferCoinFromBank({
+            await this.coin.buyCoin({
                 amount: amount,
                 userName: this.user.data.userName,
                 coinAccount: this.user.data.coinAccounts[0],

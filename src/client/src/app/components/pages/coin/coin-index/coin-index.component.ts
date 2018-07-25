@@ -12,6 +12,7 @@ import { UserService } from '../../../../services/user/user.service';
 export class CoinIndexComponent implements OnInit {
 
     public isLoading: boolean;
+    public transactionType: typeof factory.transactionType;
     public coinAccountMoneyTransferActions: factory.pecorino.action.transfer.moneyTransfer.IAction[];
 
     constructor(
@@ -22,6 +23,7 @@ export class CoinIndexComponent implements OnInit {
 
     public async ngOnInit() {
         this.isLoading = true;
+        this.transactionType = factory.transactionType;
         try {
             this.coinAccountMoneyTransferActions =
                 await this.coin.searchCoinAccountMoneyTransferActions({

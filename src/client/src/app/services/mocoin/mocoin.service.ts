@@ -13,6 +13,7 @@ export class MocoinService {
     public person: mocoin.service.Person;
     public transaction: {
         transferCoin: mocoin.service.transaction.TransferCoin;
+        buyCoin: mocoin.service.transaction.BuyCoin;
     };
 
     constructor(
@@ -27,7 +28,8 @@ export class MocoinService {
             const option = await this.createOption();
             this.person = new mocoin.service.Person(option);
             this.transaction = {
-                transferCoin: new mocoin.service.transaction.TransferCoin(option)
+                transferCoin: new mocoin.service.transaction.TransferCoin(option),
+                buyCoin: new mocoin.service.transaction.BuyCoin(option)
             };
             console.log(this);
         } catch (err) {

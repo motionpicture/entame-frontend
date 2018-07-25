@@ -52,7 +52,7 @@ body {
 }
 
 .disabled {
-    border: 1px solid #FFF;
+    border: 1px solid #FFF !important;
     background-color: transparent !important;
     opacity: 0.65;
 }

@@ -110,6 +110,31 @@ export class UserService {
             });
         }
 
+        // await this.mocoin.person.closeCoinAccount({
+        //     personId: 'me',
+        //     accountNumber: this.data.coinAccounts[0].accountNumber
+        // });
+
+        this.save();
+    }
+
+    public async update() {
+        await this.mocoin.getServices();
+        if (this.mocoin.userName === undefined) {
+            throw new Error('userName is undefined');
+        }
+
+        // ユーザーネーム取得
+        this.data.userName = this.mocoin.userName;
+
+        // コイン口座取得
+        const coinAccounts = await this.mocoin.person.searchCoinAccounts({
+            personId: 'me'
+        });
+        this.data.coinAccounts = coinAccounts.filter((account) => {
+            return (account.status === factory.pecorino.accountStatusType.Opened);
+        });
+
         this.save();
     }
 
