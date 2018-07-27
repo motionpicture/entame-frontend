@@ -8,6 +8,9 @@ export const environment = {
 
     API_ENDPOINT: 'https://20izvsdr54.execute-api.ap-northeast-1.amazonaws.com/dev',
 
-    TMP_BANK_ACCOUNT_NUMBER: '41600880117'
+    TMP_BANK_ACCOUNT_NUMBER: '41600880117',
+
+    TICKET_SITE: 'https://localhost/#/purchase/schedule'
+
 
 };
