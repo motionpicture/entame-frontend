@@ -75,11 +75,19 @@ MIT
 MIT
 MIT
 
+@angular/compiler@6.0.7
+MIT
+MIT
+
 @angular/core@6.0.7
 MIT
 MIT
 
 @angular/forms@6.0.7
+MIT
+MIT
+
+@angular/platform-browser-dynamic@6.0.7
 MIT
 MIT
 
@@ -91,19 +99,15 @@ MIT
 MIT
 MIT
 
-@mocoin/api-abstract-client@0.0.0-alpha.5
+@mocoin/api-abstract-client@0.0.0-alpha.7
 ISC
 ISC
 
-@mocoin/api-javascript-client@0.0.0-alpha.4
+@mocoin/api-javascript-client@0.0.0-alpha.5
 ISC
 ISC
 
-@mocoin/factory@0.0.0-alpha.7
-ISC
-ISC
-
-@motionpicture/pecorino-factory@0.0.0
+@mocoin/factory@0.0.0-alpha.9
 ISC
 ISC
 
@@ -130,6 +134,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+@pecorino/factory@1.0.0
+ISC
+ISC
 
 base64-js@1.2.3
 MIT

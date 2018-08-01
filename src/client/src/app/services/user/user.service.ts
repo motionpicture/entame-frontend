@@ -6,7 +6,8 @@ import { SaveType, StorageService } from '../storage/storage.service';
 
 export interface IData {
     userName: string;
-    coinAccounts: factory.pecorino.account.IAccount[];
+    coinAccounts: factory.pecorino.account.IAccount<factory.accountType.Coin>[];
+    pointAccounts: factory.pecorino.account.IAccount<factory.accountType.Point>[];
     paymentMethods: factory.ownershipInfo.IPaymentMethod<factory.paymentMethodType>[];
 }
 
@@ -37,6 +38,7 @@ export class UserService {
             this.data = {
                 userName: '',
                 coinAccounts: [],
+                pointAccounts: [],
                 paymentMethods: []
             };
 
@@ -61,6 +63,7 @@ export class UserService {
         this.data = {
             userName: '',
             coinAccounts: [],
+            pointAccounts: [],
             paymentMethods: []
         };
         this.save();
@@ -93,6 +96,21 @@ export class UserService {
                 name: this.data.userName
             });
             this.data.coinAccounts.push(coinAccount);
+        }
+
+        // ポイント口座取得
+        const pointAccounts = await this.mocoin.person.searchPointAccounts({
+            personId: 'me'
+        });
+        this.data.pointAccounts = pointAccounts.filter((account) => {
+            return (account.status === factory.pecorino.accountStatusType.Opened);
+        });
+        if (this.data.pointAccounts.length === 0) {
+            const pointAccount = await this.mocoin.person.openPointAccount({
+                personId: 'me',
+                name: this.data.userName
+            });
+            this.data.pointAccounts.push(pointAccount);
         }
 
         // 決済方法取得
@@ -132,6 +150,14 @@ export class UserService {
             personId: 'me'
         });
         this.data.coinAccounts = coinAccounts.filter((account) => {
+            return (account.status === factory.pecorino.accountStatusType.Opened);
+        });
+
+        // ポイント口座取得
+        const pointAccounts = await this.mocoin.person.searchPointAccounts({
+            personId: 'me'
+        });
+        this.data.pointAccounts = pointAccounts.filter((account) => {
             return (account.status === factory.pecorino.accountStatusType.Opened);
         });
 

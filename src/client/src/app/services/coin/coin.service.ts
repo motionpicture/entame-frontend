@@ -68,7 +68,7 @@ export class CoinService {
     public async buyCoin(args: {
         amount: number,
         userName: string,
-        coinAccount: factory.pecorino.account.IAccount,
+        coinAccount: factory.pecorino.account.IAccount<factory.accountType.Coin>,
         paymentMethod: factory.ownershipInfo.IPaymentMethod<factory.paymentMethodType>
     }) {
         await this.mocoin.getServices();
@@ -87,7 +87,8 @@ export class CoinService {
             notes: '入金',
             fromLocation: args.paymentMethod,
             toLocation: {
-                typeOf: factory.ownershipInfo.AccountGoodType.CoinAccount,
+                typeOf: factory.ownershipInfo.AccountGoodType.Account,
+                accountType: args.coinAccount.accountType,
                 accountNumber: args.coinAccount.accountNumber
             }
         });
@@ -106,7 +107,7 @@ export class CoinService {
     }
 
     public async searchCoinAccountMoneyTransferActions(args: {
-        coinAccount: factory.pecorino.account.IAccount
+        coinAccount: factory.pecorino.account.IAccount<factory.accountType.Coin>
     }) {
         await this.mocoin.getServices();
         const coinAccountMoneyTransferActions =

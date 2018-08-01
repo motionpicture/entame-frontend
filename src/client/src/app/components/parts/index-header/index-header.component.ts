@@ -15,7 +15,7 @@ export class IndexHeaderComponent implements OnInit {
 
     public ngOnInit() {
         this.coin = this.user.data.coinAccounts[0].availableBalance;
-        this.point = 0;
+        this.point = this.user.data.pointAccounts[0].availableBalance;
     }
 
 }

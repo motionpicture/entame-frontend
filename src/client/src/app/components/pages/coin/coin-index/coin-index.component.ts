@@ -13,7 +13,7 @@ export class CoinIndexComponent implements OnInit {
 
     public isLoading: boolean;
     public transactionType: typeof factory.transactionType;
-    public coinAccountMoneyTransferActions: factory.pecorino.action.transfer.moneyTransfer.IAction[];
+    public coinAccountMoneyTransferActions: factory.action.transfer.moneyTransfer.IAction;
 
     constructor(
         private router: Router,
