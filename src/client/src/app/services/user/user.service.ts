@@ -117,15 +117,16 @@ export class UserService {
         this.data.paymentMethods = await this.mocoin.person.searchPaymentMethods({
             personId: 'me'
         });
-        const tmpAccount = this.data.paymentMethods.find((paymentMethod) => {
+        let tmpPaymentMethod = this.data.paymentMethods.find((paymentMethod) => {
             return (paymentMethod.accountNumber === environment.TMP_BANK_ACCOUNT_NUMBER);
         });
-        if (tmpAccount === undefined) {
-            await this.mocoin.person.addPaymentMethod({
+        if (tmpPaymentMethod === undefined) {
+            tmpPaymentMethod = await this.mocoin.person.addPaymentMethod({
                 personId: 'me',
                 accountNumber: environment.TMP_BANK_ACCOUNT_NUMBER,
                 paymentMethodType: factory.paymentMethodType.BankAccount
             });
+            this.data.paymentMethods.push(tmpPaymentMethod);
         }
 
         // await this.mocoin.person.closeCoinAccount({

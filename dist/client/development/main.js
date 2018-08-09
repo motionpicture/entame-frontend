@@ -4427,7 +4427,7 @@ var UserService = /** @class */ (function () {
      */
     UserService.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var coinAccounts, coinAccount, pointAccounts, pointAccount, _a, tmpAccount;
+            var coinAccounts, coinAccount, pointAccounts, pointAccount, _a, tmpPaymentMethod;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
@@ -4483,17 +4483,18 @@ var UserService = /** @class */ (function () {
                     case 8:
                         // 決済方法取得
                         _a.paymentMethods = _b.sent();
-                        tmpAccount = this.data.paymentMethods.find(function (paymentMethod) {
+                        tmpPaymentMethod = this.data.paymentMethods.find(function (paymentMethod) {
                             return (paymentMethod.accountNumber === _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].TMP_BANK_ACCOUNT_NUMBER);
                         });
-                        if (!(tmpAccount === undefined)) return [3 /*break*/, 10];
+                        if (!(tmpPaymentMethod === undefined)) return [3 /*break*/, 10];
                         return [4 /*yield*/, this.mocoin.person.addPaymentMethod({
                                 personId: 'me',
                                 accountNumber: _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].TMP_BANK_ACCOUNT_NUMBER,
                                 paymentMethodType: _mocoin_api_javascript_client__WEBPACK_IMPORTED_MODULE_0__["factory"].paymentMethodType.BankAccount
                             })];
                     case 9:
-                        _b.sent();
+                        tmpPaymentMethod = _b.sent();
+                        this.data.paymentMethods.push(tmpPaymentMethod);
                         _b.label = 10;
                     case 10:
                         // await this.mocoin.person.closeCoinAccount({
