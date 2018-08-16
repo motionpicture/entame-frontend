@@ -9,6 +9,8 @@ import { UserService } from '../../../services/user/user.service';
 })
 export class IndexComponent implements OnInit {
     public isLoading: boolean;
+    public coin: number;
+    public point: number;
 
     constructor(
         private user: UserService,
@@ -17,8 +19,12 @@ export class IndexComponent implements OnInit {
 
     public async ngOnInit() {
         this.isLoading = true;
+        this.coin = 0;
+        this.point = 0;
         try {
             await this.user.update();
+            this.coin = this.user.data.coinAccounts[0].availableBalance;
+            this.point = this.user.data.pointAccounts[0].availableBalance;
             this.isLoading = false;
         } catch (err) {
             console.error(err);

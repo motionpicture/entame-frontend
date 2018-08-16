@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../services/user/user.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-index-header',
@@ -7,15 +6,10 @@ import { UserService } from '../../../services/user/user.service';
     styleUrls: ['./index-header.component.scss']
 })
 export class IndexHeaderComponent implements OnInit {
-    public coin: number;
-    public point: number;
-    constructor(
-        private user: UserService
-    ) { }
+    @Input() public coin: number;
+    @Input() public point: number;
+    constructor() { }
 
-    public ngOnInit() {
-        this.coin = this.user.data.coinAccounts[0].availableBalance;
-        this.point = this.user.data.pointAccounts[0].availableBalance;
-    }
+    public ngOnInit() {}
 
 }
