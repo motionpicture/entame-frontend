@@ -35,9 +35,11 @@
                     <div class="small-x-text">{{ action.endDate | date: 'yyyy/MM/dd hh:mm'  }}</div>
                     <p *ngIf="action.purpose.typeOf === transactionType.BuyCoin" class="mb-0">{{ action.description }}</p>
                     <p *ngIf="action.purpose.typeOf === transactionType.TransferCoin" class="mb-0">{{ action.description }}</p>
+                    <p *ngIf="action.purpose.typeOf === transactionType.WithdrawCoin" class="mb-0">{{ action.description }}</p>
                 </div>
                 <div *ngIf="action.purpose.typeOf === transactionType.BuyCoin" class="text-right large-text text-primary">+{{ action.amount }}円</div>
                 <div *ngIf="action.purpose.typeOf === transactionType.TransferCoin" class="text-right large-text text-danger">-{{ action.amount }}円</div>
+                <div *ngIf="action.purpose.typeOf === transactionType.WithdrawCoin" class="text-right large-text text-danger">-{{ action.amount }}円</div>
             </li>
         </ul>
     </div>

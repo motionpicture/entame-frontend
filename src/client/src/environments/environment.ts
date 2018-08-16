@@ -10,7 +10,8 @@ export const environment = {
 
     TMP_BANK_ACCOUNT_NUMBER: '41600880117',
 
-    TICKET_SITE: 'https://localhost/#/purchase/schedule'
+    TICKET_SITE_01: 'https://localhost/#/purchase/schedule',
+    TICKET_SITE_02: 'https://entame-ticket-development.azurewebsites.net'
 
 
 };

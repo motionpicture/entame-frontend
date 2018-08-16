@@ -10,5 +10,6 @@ export const environment = {
 
     TMP_BANK_ACCOUNT_NUMBER: '41600880117',
 
-    TICKET_SITE: ''
+    TICKET_SITE_01: '',
+    TICKET_SITE_02: ''
 };
