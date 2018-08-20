@@ -31,7 +31,7 @@ export class MocoinService {
                 transferCoin: new mocoin.service.transaction.TransferCoin(option),
                 buyCoin: new mocoin.service.transaction.BuyCoin(option)
             };
-            console.log(this);
+            // console.log(this);
         } catch (err) {
             console.log(err);
 
@@ -45,7 +45,7 @@ export class MocoinService {
     public async signIn() {
         const url = '/api/authorize/signIn';
         const result = await this.http.get<any>(url, {}).toPromise();
-        console.log(result.url);
+        // console.log(result.url);
         location.href = result.url;
     }
 
@@ -55,7 +55,7 @@ export class MocoinService {
     public async signUp() {
         const url = '/api/authorize/signIn';
         const result = await this.http.get<any>(url, {}).toPromise();
-        console.log(result.url);
+        // console.log(result.url);
         const signupUrl = (<string>result.url).replace(/\/authorize/, '/signup');
         location.href = signupUrl;
     }
@@ -66,7 +66,7 @@ export class MocoinService {
     public async signOut() {
         const url = '/api/authorize/signOut';
         const result = await this.http.get<any>(url, {}).toPromise();
-        console.log(result.url);
+        // console.log(result.url);
         location.href = result.url;
     }
 

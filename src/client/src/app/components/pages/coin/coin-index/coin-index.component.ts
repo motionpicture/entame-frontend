@@ -29,7 +29,7 @@ export class CoinIndexComponent implements OnInit {
                 await this.coin.searchCoinAccountMoneyTransferActions({
                     coinAccount: this.user.data.coinAccounts[0]
                 });
-            console.log(this.coinAccountMoneyTransferActions);
+            // console.log(this.coinAccountMoneyTransferActions);
         } catch (err) {
             console.error(err);
             this.router.navigate(['/error']);

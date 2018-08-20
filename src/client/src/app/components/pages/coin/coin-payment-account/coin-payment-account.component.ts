@@ -60,13 +60,18 @@ export class CoinPaymentAccountComponent implements OnInit {
         this.isLoading = true;
         const amount: number = this.form.controls.amount.value;
         try {
-            // 入金処理
-            await this.coin.buyCoin({
+            const buyCoinArgs = {
                 amount: amount,
                 userName: this.user.data.userName,
                 coinAccount: this.user.data.coinAccounts[0],
                 paymentMethod: this.selectPaymentMethod
-            });
+            };
+            try {
+                // 入金処理
+                await this.coin.buyCoin(buyCoinArgs);
+            } catch (err) {
+                await this.coin.buyCoin(buyCoinArgs);
+            }
             // ユーザー情報更新
             this.user.data.coinAccounts[0].availableBalance += amount;
             this.user.data.coinAccounts[0].balance += amount;

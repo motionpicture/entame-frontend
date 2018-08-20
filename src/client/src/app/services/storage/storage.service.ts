@@ -21,7 +21,7 @@ export enum SaveType {
 export class StorageService {
 
     constructor() {
-        console.log('StorageService');
+        // console.log('StorageService');
      }
 
     public load(key: string, saveType?: SaveType): any | null {

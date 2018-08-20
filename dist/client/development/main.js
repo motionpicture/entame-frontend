@@ -1485,7 +1485,6 @@ var CoinIndexComponent = /** @class */ (function () {
                     case 2:
                         _a.coinAccountMoneyTransferActions =
                             _b.sent();
-                        console.log(this.coinAccountMoneyTransferActions);
                         return [3 /*break*/, 4];
                     case 3:
                         err_1 = _b.sent();
@@ -1724,7 +1723,7 @@ var CoinPaymentAccountComponent = /** @class */ (function () {
      */
     CoinPaymentAccountComponent.prototype.onSubmit = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var amount, err_1;
+            var amount, buyCoinArgs, err_1, err_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -1735,32 +1734,44 @@ var CoinPaymentAccountComponent = /** @class */ (function () {
                         amount = this.form.controls.amount.value;
                         _a.label = 1;
                     case 1:
-                        _a.trys.push([1, 3, , 4]);
-                        // 入金処理
-                        return [4 /*yield*/, this.coin.buyCoin({
-                                amount: amount,
-                                userName: this.user.data.userName,
-                                coinAccount: this.user.data.coinAccounts[0],
-                                paymentMethod: this.selectPaymentMethod
-                            })];
+                        _a.trys.push([1, 7, , 8]);
+                        buyCoinArgs = {
+                            amount: amount,
+                            userName: this.user.data.userName,
+                            coinAccount: this.user.data.coinAccounts[0],
+                            paymentMethod: this.selectPaymentMethod
+                        };
+                        _a.label = 2;
                     case 2:
+                        _a.trys.push([2, 4, , 6]);
+                        // 入金処理
+                        return [4 /*yield*/, this.coin.buyCoin(buyCoinArgs)];
+                    case 3:
                         // 入金処理
                         _a.sent();
+                        return [3 /*break*/, 6];
+                    case 4:
+                        err_1 = _a.sent();
+                        return [4 /*yield*/, this.coin.buyCoin(buyCoinArgs)];
+                    case 5:
+                        _a.sent();
+                        return [3 /*break*/, 6];
+                    case 6:
                         // ユーザー情報更新
                         this.user.data.coinAccounts[0].availableBalance += amount;
                         this.user.data.coinAccounts[0].balance += amount;
                         this.user.save();
                         this.router.navigate(['/coin/payment/complete']);
-                        return [3 /*break*/, 4];
-                    case 3:
-                        err_1 = _a.sent();
-                        console.error(err_1);
+                        return [3 /*break*/, 8];
+                    case 7:
+                        err_2 = _a.sent();
+                        console.error(err_2);
                         this.openModal({
                             title: 'エラーが発生しました',
-                            message: err_1.message
+                            message: err_2.message
                         });
-                        return [3 /*break*/, 4];
-                    case 4:
+                        return [3 /*break*/, 8];
+                    case 8:
                         this.isLoading = false;
                         return [2 /*return*/];
                 }
@@ -4121,7 +4132,6 @@ var MocoinService = /** @class */ (function () {
                             transferCoin: new _mocoin_api_javascript_client__WEBPACK_IMPORTED_MODULE_1__["service"].transaction.TransferCoin(option),
                             buyCoin: new _mocoin_api_javascript_client__WEBPACK_IMPORTED_MODULE_1__["service"].transaction.BuyCoin(option)
                         };
-                        console.log(this);
                         return [3 /*break*/, 3];
                     case 2:
                         err_1 = _a.sent();
@@ -4145,7 +4155,7 @@ var MocoinService = /** @class */ (function () {
                         return [4 /*yield*/, this.http.get(url, {}).toPromise()];
                     case 1:
                         result = _a.sent();
-                        console.log(result.url);
+                        // console.log(result.url);
                         location.href = result.url;
                         return [2 /*return*/];
                 }
@@ -4165,7 +4175,6 @@ var MocoinService = /** @class */ (function () {
                         return [4 /*yield*/, this.http.get(url, {}).toPromise()];
                     case 1:
                         result = _a.sent();
-                        console.log(result.url);
                         signupUrl = result.url.replace(/\/authorize/, '/signup');
                         location.href = signupUrl;
                         return [2 /*return*/];
@@ -4186,7 +4195,7 @@ var MocoinService = /** @class */ (function () {
                         return [4 /*yield*/, this.http.get(url, {}).toPromise()];
                     case 1:
                         result = _a.sent();
-                        console.log(result.url);
+                        // console.log(result.url);
                         location.href = result.url;
                         return [2 /*return*/];
                 }
@@ -4281,7 +4290,7 @@ var SaveType;
 })(SaveType || (SaveType = {}));
 var StorageService = /** @class */ (function () {
     function StorageService() {
-        console.log('StorageService');
+        // console.log('StorageService');
     }
     StorageService.prototype.load = function (key, saveType) {
         var storage = (saveType === SaveType.Session) ? sessionStorage : localStorage;
