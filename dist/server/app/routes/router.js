@@ -9,7 +9,7 @@ exports.default = (app) => {
         next();
     });
     app.get('/api/assets/getImages', assets.getImages);
-    app.get('/api/authorize/getCredentials', authorize.getCredentials);
+    app.post('/api/authorize/getCredentials', authorize.getCredentials);
     app.get('/api/authorize/signIn', authorize.signIn);
     app.get('/api/authorize/signOut', authorize.signOut);
     app.get('/signIn', authorize.signInRedirect);

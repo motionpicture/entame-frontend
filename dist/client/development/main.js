@@ -2963,7 +2963,7 @@ __webpack_require__.r(__webpack_exports__);
  * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
  * tslint:disable
  */ 
-var styles = [".cover[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 53px;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  z-index: 20;\n  background-color: rgba(0, 0, 0, 0.75);\n  display: none; }\n  .cover.active[_ngcontent-%COMP%] {\n    display: block; }\n  .menu[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 53px;\n  bottom: 0;\n  right: -100%;\n  z-index: 20;\n  width: 100%;\n  overflow: scroll;\n  transition: right 0.1s; }\n  .menu.active[_ngcontent-%COMP%] {\n    right: 0; }\n  .menu[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%] {\n    overflow: auto; }"];
+var styles = [".cover[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 53px;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  z-index: 20;\n  background-color: rgba(0, 0, 0, 0.75);\n  display: none; }\n  .cover.active[_ngcontent-%COMP%] {\n    display: block; }\n  .menu[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 53px;\n  bottom: 0;\n  right: -100%;\n  z-index: 20;\n  width: 100%;\n  overflow: auto;\n  transition: right 0.1s; }\n  .menu.active[_ngcontent-%COMP%] {\n    right: 0; }\n  .menu[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%] {\n    overflow: auto; }"];
 
 
 
@@ -4216,19 +4216,13 @@ var MocoinService = /** @class */ (function () {
      */
     MocoinService.prototype.authorize = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var url, options, result, option;
+            var url, body, result, option;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         url = '/api/authorize/getCredentials';
-                        options = {
-                            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({
-                                'Pragma': 'no-cache',
-                                'Cache-Control': 'no-cache',
-                                'If-Modified-Since': new Date(0).toUTCString()
-                            })
-                        };
-                        return [4 /*yield*/, this.http.get(url, options).toPromise()];
+                        body = {};
+                        return [4 /*yield*/, this.http.post(url, body).toPromise()];
                     case 1:
                         result = _a.sent();
                         option = {
