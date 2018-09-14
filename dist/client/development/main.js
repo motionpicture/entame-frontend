@@ -4004,6 +4004,8 @@ var CoinService = /** @class */ (function () {
                                     accountType: args.coinAccount.accountType,
                                     accountNumber: args.coinAccount.accountNumber
                                 }
+                            }, {
+                                headers: _mocoin_mocoin_service__WEBPACK_IMPORTED_MODULE_2__["REQUEST_HEADERS"]
                             })];
                     case 2:
                         _a.transaction = _b.sent();
@@ -4014,6 +4016,8 @@ var CoinService = /** @class */ (function () {
                         // console.log('取引を中止しました。');
                         return [4 /*yield*/, this.mocoin.transaction.buyCoin.confirm({
                                 token: this.data.transaction.token
+                            }, {
+                                headers: _mocoin_mocoin_service__WEBPACK_IMPORTED_MODULE_2__["REQUEST_HEADERS"]
                             })];
                     case 3:
                         // 取引を中止する場合はコチラ↓
@@ -4039,6 +4043,8 @@ var CoinService = /** @class */ (function () {
                         return [4 /*yield*/, this.mocoin.person.searchCoinAccountMoneyTransferActions({
                                 personId: 'me',
                                 accountNumber: args.coinAccount.accountNumber
+                            }, {
+                                headers: _mocoin_mocoin_service__WEBPACK_IMPORTED_MODULE_2__["REQUEST_HEADERS"]
                             })];
                     case 2:
                         coinAccountMoneyTransferActions = _a.sent();
@@ -4059,11 +4065,12 @@ var CoinService = /** @class */ (function () {
 /*!***************************************************!*\
   !*** ./src/app/services/mocoin/mocoin.service.ts ***!
   \***************************************************/
-/*! exports provided: MocoinService */
+/*! exports provided: REQUEST_HEADERS, MocoinService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REQUEST_HEADERS", function() { return REQUEST_HEADERS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MocoinService", function() { return MocoinService; });
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "../../node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _mocoin_api_javascript_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mocoin/api-javascript-client */ "../../node_modules/@mocoin/api-javascript-client/lib/index.js");
@@ -4110,6 +4117,9 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+var REQUEST_HEADERS = {
+    'Ocp-Apim-Subscription-Key': _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].APIM_SUBSCRIPTION_KEY
+};
 var MocoinService = /** @class */ (function () {
     function MocoinService(http) {
         this.http = http;
@@ -4441,8 +4451,8 @@ var UserService = /** @class */ (function () {
                         }
                         // ユーザーネーム取得
                         this.data.userName = this.mocoin.userName;
-                        return [4 /*yield*/, this.mocoin.person.searchCoinAccounts({
-                                personId: 'me'
+                        return [4 /*yield*/, this.mocoin.person.searchCoinAccounts({ personId: 'me', }, {
+                                headers: _mocoin_mocoin_service__WEBPACK_IMPORTED_MODULE_2__["REQUEST_HEADERS"]
                             })];
                     case 2:
                         coinAccounts = _b.sent();
@@ -4450,16 +4460,15 @@ var UserService = /** @class */ (function () {
                             return (account.status === _mocoin_api_javascript_client__WEBPACK_IMPORTED_MODULE_0__["factory"].pecorino.accountStatusType.Opened);
                         });
                         if (!(this.data.coinAccounts.length === 0)) return [3 /*break*/, 4];
-                        return [4 /*yield*/, this.mocoin.person.openCoinAccount({
-                                personId: 'me',
-                                name: this.data.userName
+                        return [4 /*yield*/, this.mocoin.person.openCoinAccount({ personId: 'me', name: this.data.userName }, {
+                                headers: _mocoin_mocoin_service__WEBPACK_IMPORTED_MODULE_2__["REQUEST_HEADERS"]
                             })];
                     case 3:
                         coinAccount = _b.sent();
                         this.data.coinAccounts.push(coinAccount);
                         _b.label = 4;
-                    case 4: return [4 /*yield*/, this.mocoin.person.searchPointAccounts({
-                            personId: 'me'
+                    case 4: return [4 /*yield*/, this.mocoin.person.searchPointAccounts({ personId: 'me' }, {
+                            headers: _mocoin_mocoin_service__WEBPACK_IMPORTED_MODULE_2__["REQUEST_HEADERS"]
                         })];
                     case 5:
                         pointAccounts = _b.sent();
@@ -4467,9 +4476,8 @@ var UserService = /** @class */ (function () {
                             return (account.status === _mocoin_api_javascript_client__WEBPACK_IMPORTED_MODULE_0__["factory"].pecorino.accountStatusType.Opened);
                         });
                         if (!(this.data.pointAccounts.length === 0)) return [3 /*break*/, 7];
-                        return [4 /*yield*/, this.mocoin.person.openPointAccount({
-                                personId: 'me',
-                                name: this.data.userName
+                        return [4 /*yield*/, this.mocoin.person.openPointAccount({ personId: 'me', name: this.data.userName }, {
+                                headers: _mocoin_mocoin_service__WEBPACK_IMPORTED_MODULE_2__["REQUEST_HEADERS"]
                             })];
                     case 6:
                         pointAccount = _b.sent();
@@ -4492,6 +4500,8 @@ var UserService = /** @class */ (function () {
                                 personId: 'me',
                                 accountNumber: _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].TMP_BANK_ACCOUNT_NUMBER,
                                 paymentMethodType: _mocoin_api_javascript_client__WEBPACK_IMPORTED_MODULE_0__["factory"].paymentMethodType.BankAccount
+                            }, {
+                                headers: _mocoin_mocoin_service__WEBPACK_IMPORTED_MODULE_2__["REQUEST_HEADERS"]
                             })];
                     case 9:
                         tmpPaymentMethod = _b.sent();
@@ -4521,16 +4531,16 @@ var UserService = /** @class */ (function () {
                         }
                         // ユーザーネーム取得
                         this.data.userName = this.mocoin.userName;
-                        return [4 /*yield*/, this.mocoin.person.searchCoinAccounts({
-                                personId: 'me'
+                        return [4 /*yield*/, this.mocoin.person.searchCoinAccounts({ personId: 'me' }, {
+                                headers: _mocoin_mocoin_service__WEBPACK_IMPORTED_MODULE_2__["REQUEST_HEADERS"]
                             })];
                     case 2:
                         coinAccounts = _a.sent();
                         this.data.coinAccounts = coinAccounts.filter(function (account) {
                             return (account.status === _mocoin_api_javascript_client__WEBPACK_IMPORTED_MODULE_0__["factory"].pecorino.accountStatusType.Opened);
                         });
-                        return [4 /*yield*/, this.mocoin.person.searchPointAccounts({
-                                personId: 'me'
+                        return [4 /*yield*/, this.mocoin.person.searchPointAccounts({ personId: 'me' }, {
+                                headers: _mocoin_mocoin_service__WEBPACK_IMPORTED_MODULE_2__["REQUEST_HEADERS"]
                             })];
                     case 3:
                         pointAccounts = _a.sent();
@@ -4671,7 +4681,8 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     version: '1.0.0',
-    API_ENDPOINT: 'https://asrw80qlrc.execute-api.ap-northeast-1.amazonaws.com/entamecoin',
+    API_ENDPOINT: 'https://motionpicture.azure-api.net/entamecoin',
+    APIM_SUBSCRIPTION_KEY: '7b829bfaea0b45728a82ceda6cdd4133',
     TMP_BANK_ACCOUNT_NUMBER: '41600880117',
     TICKET_SITE_01: 'https://sskts-frontend-development-mocoin.azurewebsites.net/#/purchase/schedule',
     TICKET_SITE_02: 'https://entame-ticket-development.azurewebsites.net'

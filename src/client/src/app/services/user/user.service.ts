@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { factory } from '@mocoin/api-javascript-client';
 import { environment } from '../../../environments/environment';
-import { MocoinService } from '../mocoin/mocoin.service';
+import { MocoinService, REQUEST_HEADERS } from '../mocoin/mocoin.service';
 import { SaveType, StorageService } from '../storage/storage.service';
 
 export interface IData {
@@ -84,32 +84,42 @@ export class UserService {
         this.data.userName = this.mocoin.userName;
 
         // コイン口座取得
-        const coinAccounts = await this.mocoin.person.searchCoinAccounts({
-            personId: 'me'
-        });
+        const coinAccounts = await this.mocoin.person.searchCoinAccounts(
+            { personId: 'me', },
+            <any>{
+                headers: REQUEST_HEADERS
+            }
+        );
         this.data.coinAccounts = coinAccounts.filter((account) => {
             return (account.status === factory.pecorino.accountStatusType.Opened);
         });
         if (this.data.coinAccounts.length === 0) {
-            const coinAccount = await this.mocoin.person.openCoinAccount({
-                personId: 'me',
-                name: this.data.userName
-            });
+            const coinAccount = await this.mocoin.person.openCoinAccount(
+                { personId: 'me', name: this.data.userName },
+                <any>{
+                    headers: REQUEST_HEADERS
+                }
+            );
             this.data.coinAccounts.push(coinAccount);
         }
 
         // ポイント口座取得
-        const pointAccounts = await this.mocoin.person.searchPointAccounts({
-            personId: 'me'
-        });
+        const pointAccounts = await this.mocoin.person.searchPointAccounts(
+            { personId: 'me' },
+            <any>{
+                headers: REQUEST_HEADERS
+            }
+        );
         this.data.pointAccounts = pointAccounts.filter((account) => {
             return (account.status === factory.pecorino.accountStatusType.Opened);
         });
         if (this.data.pointAccounts.length === 0) {
-            const pointAccount = await this.mocoin.person.openPointAccount({
-                personId: 'me',
-                name: this.data.userName
-            });
+            const pointAccount = await this.mocoin.person.openPointAccount(
+                { personId: 'me', name: this.data.userName },
+                <any>{
+                    headers: REQUEST_HEADERS
+                }
+            );
             this.data.pointAccounts.push(pointAccount);
         }
 
@@ -121,11 +131,16 @@ export class UserService {
             return (paymentMethod.accountNumber === environment.TMP_BANK_ACCOUNT_NUMBER);
         });
         if (tmpPaymentMethod === undefined) {
-            tmpPaymentMethod = await this.mocoin.person.addPaymentMethod({
-                personId: 'me',
-                accountNumber: environment.TMP_BANK_ACCOUNT_NUMBER,
-                paymentMethodType: factory.paymentMethodType.BankAccount
-            });
+            tmpPaymentMethod = await this.mocoin.person.addPaymentMethod(
+                {
+                    personId: 'me',
+                    accountNumber: environment.TMP_BANK_ACCOUNT_NUMBER,
+                    paymentMethodType: factory.paymentMethodType.BankAccount
+                },
+                <any>{
+                    headers: REQUEST_HEADERS
+                }
+            );
             this.data.paymentMethods.push(tmpPaymentMethod);
         }
 
@@ -145,115 +160,29 @@ export class UserService {
 
         // ユーザーネーム取得
         this.data.userName = this.mocoin.userName;
-
         // コイン口座取得
-        const coinAccounts = await this.mocoin.person.searchCoinAccounts({
-            personId: 'me'
-        });
+        const coinAccounts = await this.mocoin.person.searchCoinAccounts(
+            { personId: 'me' },
+            <any>{
+                headers: REQUEST_HEADERS
+            }
+        );
         this.data.coinAccounts = coinAccounts.filter((account) => {
             return (account.status === factory.pecorino.accountStatusType.Opened);
         });
 
         // ポイント口座取得
-        const pointAccounts = await this.mocoin.person.searchPointAccounts({
-            personId: 'me'
-        });
+        const pointAccounts = await this.mocoin.person.searchPointAccounts(
+            { personId: 'me' },
+            <any>{
+                headers: REQUEST_HEADERS
+            }
+        );
         this.data.pointAccounts = pointAccounts.filter((account) => {
             return (account.status === factory.pecorino.accountStatusType.Opened);
         });
 
         this.save();
     }
-
-    // /**
-    //  * 口座情報更新
-    //  * @method updateAccount
-    //  */
-    // public async updateAccount() {
-    //     await this.mocoin.getServices();
-    //     // 口座検索
-    //     let accounts = await this.mocoin.person.findAccounts({
-    //         personId: 'me'
-    //     });
-    //     accounts = accounts.filter((account) => {
-    //         return account.status === factory.pecorino.accountStatusType.Opened;
-    //     });
-    //     if (accounts.length === 0) {
-    //         // 口座開設
-    //         const account = await this.mocoin.person.openAccount({
-    //             personId: 'me',
-    //             name: this.getName()
-    //         });
-    //         this.data.accounts.push(account);
-    //     } else {
-    //         this.data.accounts = accounts;
-    //     }
-    //     this.save();
-    // }
-
-    // /**
-    //  * 名前取得
-    //  * @method getName
-    //  */
-    // public getName() {
-    //     if (this.data.contact === undefined) {
-    //         return '';
-    //     }
-    //     return `${this.data.contact.familyName} ${this.data.contact.givenName}`;
-    // }
-
-    // /**
-    //  * 電話番号取得（ハイフンなし）
-    //  * @method getTelephone
-    //  */
-    // public getTelephone() {
-    //     if (this.data.contact === undefined) {
-    //         return '';
-    //     }
-    //     return this.data.contact.telephone.replace(/\-/g, '');
-    // }
-
-    // /**
-    //  * 口座情報取得
-    //  * @method getAccount
-    //  */
-    // public getAccount(index: number) {
-    //     if (this.data.accounts.length === 0) {
-    //         return undefined;
-    //     }
-    //     return this.data.accounts[index];
-    // }
-
-    // /**
-    //  * 基本情報変更
-    //  * @method updateProfile
-    //  */
-    // public async updateProfile(args: {
-    //     familyName: string;
-    //     givenName: string;
-    //     email: string;
-    //     telephone: string;
-    //     postalCode: string;
-    // }) {
-    //     await this.mocoin.getServices();
-    //     await this.mocoin.person.updateContacts({
-    //         personId: 'me',
-    //         contacts: {
-    //             familyName: args.familyName,
-    //             givenName: args.givenName,
-    //             email: args.email,
-    //             telephone: args.telephone
-    //         }
-    //     });
-    //     const contact = await this.mocoin.person.getContacts({
-    //         personId: 'me'
-    //     });
-    //     if (contact === undefined) {
-    //         throw new Error('contact is undefined');
-    //     }
-    //     this.data.contact = contact;
-
-    //     this.save();
-    // }
 
 }

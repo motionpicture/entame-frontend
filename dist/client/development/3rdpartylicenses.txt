@@ -91,15 +91,15 @@ MIT
 MIT
 MIT
 
-@mocoin/api-abstract-client@0.0.0-alpha.7
+@mocoin/api-abstract-client@0.0.0-alpha.9
 ISC
 ISC
 
-@mocoin/api-javascript-client@0.0.0-alpha.5
+@mocoin/api-javascript-client@1.0.0-alpha.8
 ISC
 ISC
 
-@mocoin/factory@0.0.0-alpha.9
+@mocoin/factory@0.0.0-alpha.10
 ISC
 ISC
 
@@ -127,7 +127,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-@pecorino/factory@1.0.0
+@pecorino/factory@1.1.0
 ISC
 ISC
 
@@ -723,7 +723,7 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-whatwg-fetch@2.0.4
+whatwg-fetch@3.0.0
 MIT
 Copyright (c) 2014-2016 GitHub, Inc.
 

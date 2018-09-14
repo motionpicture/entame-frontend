@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { factory } from '@mocoin/api-javascript-client';
 import * as moment from 'moment';
-import { MocoinService } from '../mocoin/mocoin.service';
+import { MocoinService, REQUEST_HEADERS } from '../mocoin/mocoin.service';
 import { SaveType, StorageService } from '../storage/storage.service';
 
 export interface IData {
@@ -73,25 +73,30 @@ export class CoinService {
     }) {
         await this.mocoin.getServices();
         this.reset();
-        this.data.transaction = await this.mocoin.transaction.buyCoin.start({
-            expires: moment().add(30, 'minutes').toDate(),
-            agent: {
-                typeOf: factory.personType.Person,
-                name: 'agent name'
+        this.data.transaction = await this.mocoin.transaction.buyCoin.start(
+            {
+                expires: moment().add(30, 'minutes').toDate(),
+                agent: {
+                    typeOf: factory.personType.Person,
+                    name: 'agent name'
+                },
+                recipient: {
+                    typeOf: factory.personType.Person,
+                    name: args.userName
+                },
+                amount: args.amount,
+                notes: '入金',
+                fromLocation: args.paymentMethod,
+                toLocation: {
+                    typeOf: factory.ownershipInfo.AccountGoodType.Account,
+                    accountType: args.coinAccount.accountType,
+                    accountNumber: args.coinAccount.accountNumber
+                }
             },
-            recipient: {
-                typeOf: factory.personType.Person,
-                name: args.userName
-            },
-            amount: args.amount,
-            notes: '入金',
-            fromLocation: args.paymentMethod,
-            toLocation: {
-                typeOf: factory.ownershipInfo.AccountGoodType.Account,
-                accountType: args.coinAccount.accountType,
-                accountNumber: args.coinAccount.accountNumber
+            <any>{
+                headers: REQUEST_HEADERS
             }
-        });
+        );
         console.log('取引を開始しました。', this.data.transaction);
 
         // 取引を中止する場合はコチラ↓
@@ -99,9 +104,14 @@ export class CoinService {
         // await this.mocoin.transaction.transferCoin.cancel({ transactionId: transaction.id });
         // console.log('取引を中止しました。');
 
-        await this.mocoin.transaction.buyCoin.confirm({
-            token: this.data.transaction.token
-        });
+        await this.mocoin.transaction.buyCoin.confirm(
+            {
+                token: this.data.transaction.token
+            },
+            <any>{
+                headers: REQUEST_HEADERS
+            }
+        );
         this.data.amount = args.amount;
         this.save();
     }
@@ -111,10 +121,15 @@ export class CoinService {
     }) {
         await this.mocoin.getServices();
         const coinAccountMoneyTransferActions =
-            await this.mocoin.person.searchCoinAccountMoneyTransferActions({
-                personId: 'me',
-                accountNumber: args.coinAccount.accountNumber
-            });
+            await this.mocoin.person.searchCoinAccountMoneyTransferActions(
+                {
+                    personId: 'me',
+                    accountNumber: args.coinAccount.accountNumber
+                },
+                <any>{
+                    headers: REQUEST_HEADERS
+                }
+            );
 
         return coinAccountMoneyTransferActions;
     }

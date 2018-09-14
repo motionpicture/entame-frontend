@@ -6,7 +6,8 @@ export const environment = {
     production: true,
     version: '1.0.0',
 
-    API_ENDPOINT: 'https://asrw80qlrc.execute-api.ap-northeast-1.amazonaws.com/entamecoin',
+    API_ENDPOINT: 'https://motionpicture.azure-api.net/entamecoin',
+    APIM_SUBSCRIPTION_KEY: '7b829bfaea0b45728a82ceda6cdd4133',
 
     TMP_BANK_ACCOUNT_NUMBER: '41600880117',
 

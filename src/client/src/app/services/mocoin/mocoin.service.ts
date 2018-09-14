@@ -3,6 +3,10 @@ import { Injectable } from '@angular/core';
 import * as mocoin from '@mocoin/api-javascript-client';
 import { environment } from '../../../environments/environment';
 
+export const REQUEST_HEADERS = {
+    'Ocp-Apim-Subscription-Key': environment.APIM_SUBSCRIPTION_KEY
+};
+
 @Injectable({
     providedIn: 'root'
 })
